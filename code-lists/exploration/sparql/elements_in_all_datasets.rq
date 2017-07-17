@@ -1,0 +1,17 @@
+PREFIX void: <http://rdfs.org/ns/void#>
+
+SELECT DISTINCT ?element
+WHERE {
+  GRAPH ?g1 {
+    [] void:propertyPartition/void:property ?element .
+  }
+  FILTER NOT EXISTS {
+    GRAPH ?g2 {
+      ?dataset a void:Dataset .
+      FILTER NOT EXISTS {
+        ?dataset void:propertyPartition/void:property ?element .
+      }
+    }
+  }
+}
+ORDER BY ?element

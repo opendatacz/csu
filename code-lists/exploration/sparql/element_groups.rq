@@ -1,0 +1,18 @@
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX void:    <http://rdfs.org/ns/void#>
+
+SELECT ?elements
+       (GROUP_CONCAT(DISTINCT ?dataset; separator = ", ") AS ?datasets)
+       (COUNT(?dataset) AS ?count)
+WHERE {
+  {
+    SELECT ?dataset (GROUP_CONCAT(?element) AS ?elements)
+    WHERE {
+      [] dcterms:identifier ?dataset ;
+        void:propertyPartition/void:property ?element .
+    }
+    GROUP BY ?dataset
+  }
+}
+GROUP BY ?elements
+ORDER BY DESC(?count)

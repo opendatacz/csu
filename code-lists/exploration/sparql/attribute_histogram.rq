@@ -1,0 +1,11 @@
+PREFIX void: <http://rdfs.org/ns/void#>
+
+SELECT ?attribute (SUM(?triples) AS ?count)
+WHERE {
+  ?partition void:property ?property .
+  FILTER strstarts(?property, "ATR-")
+  ?partition void:triples ?triples .
+  BIND (strafter(?property, "ATR-") AS ?attribute)
+}
+GROUP BY ?attribute
+ORDER BY DESC(?count)

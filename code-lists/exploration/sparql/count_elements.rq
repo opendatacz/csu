@@ -1,0 +1,8 @@
+PREFIX void: <http://rdfs.org/ns/void#>
+
+SELECT (COUNT(DISTINCT ?element) AS ?count)
+WHERE {
+  GRAPH ?g {
+    [] void:propertyPartition/void:property ?element .
+  }
+}

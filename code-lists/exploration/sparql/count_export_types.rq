@@ -1,0 +1,8 @@
+PREFIX dcterms: <http://purl.org/dc/terms/>
+
+SELECT ?type (COUNT(?dataset) AS ?count)
+WHERE {
+  ?dataset dcterms:type ?type .
+}
+GROUP BY ?type
+ORDER BY DESC(?count)

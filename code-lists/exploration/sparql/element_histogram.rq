@@ -1,0 +1,19 @@
+PREFIX void: <http://rdfs.org/ns/void#>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+
+SELECT ?element (COUNT(DISTINCT ?g)/?codeListCount AS ?count)
+WHERE {
+  {
+    SELECT (xsd:decimal(COUNT(DISTINCT ?g)) AS ?codeListCount)
+    WHERE {
+      GRAPH ?g {
+        [] ?p [] .
+      }
+    }
+  }
+  GRAPH ?g {
+    [] void:propertyPartition/void:property ?element .
+  }
+}
+GROUP BY ?element ?codeListCount
+ORDER BY DESC(?count)

@@ -1,0 +1,13 @@
+PREFIX void: <http://rdfs.org/ns/void#>
+
+SELECT ?element (SUM(?count) AS ?sum)
+WHERE {
+  GRAPH ?g {
+    [] void:propertyPartition [
+      void:property ?element ;
+      void:triples ?count
+    ] .
+  }
+}
+GROUP BY ?element
+ORDER BY DESC(?sum)

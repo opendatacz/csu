@@ -1,0 +1,11 @@
+PREFIX dcat:    <http://www.w3.org/ns/dcat#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+
+SELECT (COUNT(DISTINCT ?dataset) AS ?count)
+WHERE {
+  GRAPH <https://nkod.opendata.cz/zdroj/datová-sada/NKOD> {
+    ?dataset a dcat:Dataset ;
+      dcterms:publisher <https://linked.opendata.cz/zdroj/ekonomický-subjekt/00025593> ;
+      dcat:keyword "číselník"@cs .
+  }
+}

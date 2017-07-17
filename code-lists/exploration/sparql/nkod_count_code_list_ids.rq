@@ -1,0 +1,17 @@
+PREFIX dcat:     <http://www.w3.org/ns/dcat#>
+PREFIX dcterms:  <http://purl.org/dc/terms/>
+PREFIX foaf:     <http://xmlns.com/foaf/0.1/>
+
+SELECT (COUNT(DISTINCT ?code) AS ?count)
+WHERE {
+  GRAPH <https://nkod.opendata.cz/zdroj/datová-sada/NKOD> {
+    [] a dcat:Dataset ;
+      dcterms:publisher <https://linked.opendata.cz/zdroj/ekonomický-subjekt/00025593> ;
+      foaf:page ?page .
+
+    BIND ("http://apl.czso.cz/iSMS/" AS ?ns)
+    BIND (str(?page) AS ?pageStr)
+    FILTER strstarts(?pageStr, ?ns)
+    BIND (replace(?pageStr, "^.*kodcis=(\\d+).*$", "$1") AS ?code)
+  }
+}
