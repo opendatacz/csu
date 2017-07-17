@@ -1,0 +1,60 @@
+PREFIX :               <http://localhost/>
+PREFIX csu-dimension:  <https://csu.opendata.cz/zdroj/definice-datové-struktury/020050-17/dimenze/>
+PREFIX csu-measure:    <https://csu.opendata.cz/zdroj/definice-datové-struktury/020050-17/míra/>
+PREFIX qb:             <http://purl.org/linked-data/cube#>
+PREFIX rdfs:           <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX sdmx-attribute: <http://purl.org/linked-data/sdmx/2009/attribute#>
+PREFIX sdmx-code:      <http://purl.org/linked-data/sdmx/2009/code#>
+PREFIX xsd:            <http://www.w3.org/2001/XMLSchema#>
+
+CONSTRUCT {
+  <https://csu.opendata.cz/zdroj/datová-sada/020050-17> a qb:DataSet ;
+    rdfs:label "Návštěvnost hromadných ubytovacích zařízení"@cs ;
+    qb:structure <https://csu.opendata.cz/zdroj/definice-datové-struktury/020050-17> .
+
+  ?observation a qb:Observation ;
+    csu-dimension:kategorie-ubytovacího-zařízení ?category ;
+    csu-dimension:referenční-území ?refArea ;
+    csu-dimension:rok ?year ;
+    csu-dimension:území-původu ?originArea ;
+    qb:measureType ?measure ;
+    sdmx-attribute:origDataId ?id ;
+    sdmx-attribute:confStatus ?confStatus ;
+    ?measure ?value ;
+    qb:dataSet <https://csu.opendata.cz/zdroj/datová-sada/020050-17> .
+}
+WHERE {
+  VALUES (?stapro ?measure) {
+         ("2654"  csu-measure:počet-turistů)
+         ("2655"  csu-measure:počet-přenocování-turistů)
+  }
+  ?_observation :idhod ?id ;
+    :kat_cis ?categoryCodeList ; 
+    :kat_kod ?categoryCode ;
+    :rok ?_year ;
+    :stapro_kod ?stapro ;
+    :uzemi_cis ?refAreaCodeList ;
+    :uzemi_kod ?refAreaCode ;
+    :uzemiz_cis ?originAreaCodeList ;
+    :uzemiz_kod ?originAreaCode .
+ 
+  BIND ("https://csu.opendata.cz/zdroj/řízený-slovník/" AS ?codeListNs)
+  BIND (iri(concat(?codeListNs, ?categoryCodeList, "/pojem/", ?categoryCode)) AS ?category)
+  BIND (iri(concat(?codeListNs, ?refAreaCodeList, "/pojem/", ?refAreaCode)) AS ?refArea)
+  BIND (iri(concat("http://reference.data.gov.uk/id/year/", ?_year)) AS ?year)
+  BIND (iri(concat(?codeListNs, ?originAreaCodeList, "/pojem/", ?originAreaCode)) AS ?originArea)
+  {
+    ?_observation :hodnota ?_value .
+    BIND (strdt(?_value, xsd:integer) AS ?value)
+  } UNION {
+    ?_observation :duvernost "duverny" .
+    BIND (sdmx-code:confStatus-D AS ?confStatus)
+    BIND (0 AS ?value)
+  }
+  BIND (iri(concat("https://csu.opendata.cz/zdroj/datová-sada/020050-17/pozorování/",
+                   ?categoryCodeList, "-", ?categoryCode, "/",
+                   ?refAreaCodeList, "-", ?refAreaCode, "/",
+                   ?_year, "/",
+                   ?originAreaCodeList, "-", ?originAreaCode, "/",
+                   ?stapro)) AS ?observation)
+}

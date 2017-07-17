@@ -1,0 +1,78 @@
+# ----- Jmenné prostory specifické pro DSD -----
+
+@prefix csu:             <https://csu.opendata.cz/zdroj/slovník#> .
+@prefix csu-codelist:    <https://csu.opendata.cz/zdroj/řízený-slovník/> .
+@prefix csu-dimension:   <https://csu.opendata.cz/zdroj/definice-datové-struktury/020050-17/dimenze/> .
+@prefix csu-measure:     <https://csu.opendata.cz/zdroj/definice-datové-struktury/020050-17/míra/> .
+
+# ----- Generické jmenné prostory -----
+
+@prefix interval:        <http://reference.data.gov.uk/def/intervals/> .
+@prefix owl:             <http://www.w3.org/2002/07/owl#> .
+@prefix qb:              <http://purl.org/linked-data/cube#> .
+@prefix rdf:             <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:            <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sdmx-attribute:  <http://purl.org/linked-data/sdmx/2009/attribute#> .
+@prefix sdmx-code:       <http://purl.org/linked-data/sdmx/2009/code#> .
+@prefix sdmx-concept:    <http://purl.org/linked-data/sdmx/2009/concept#> .
+@prefix sdmx-dimension:  <http://purl.org/linked-data/sdmx/2009/dimension#> .
+@prefix sdmx-measure:    <http://purl.org/linked-data/sdmx/2009/measure#> .
+@prefix xsd:             <http://www.w3.org/2001/XMLSchema#> .
+
+<https://csu.opendata.cz/zdroj/definice-datové-struktury/020050-17> a qb:DataStructureDefinition ;
+  rdfs:label "Definice datové struktury datové sady Návštěvnost hromadných ubytovacích zařízení"@cs ;
+  qb:component [ qb:dimension csu-dimension:kategorie-ubytovacího-zařízení ;
+                 qb:order 1 ],
+               [ qb:dimension csu-dimension:referenční-území ;
+                 qb:order 2 ],
+               [ qb:dimension csu-dimension:rok ;
+                 qb:order 3 ],
+               [ qb:dimension csu-dimension:území-původu ;
+                 qb:order 4 ],
+               [ qb:dimension qb:measureType ;
+                 qb:order 5 ],
+               [ qb:attribute sdmx-attribute:origDataId ;
+                 qb:componentRequired true ],
+               [ qb:attribute sdmx-attribute:confStatus ;
+                 qb:componentRequired false ],
+               [ qb:measure csu-measure:počet-turistů ],
+               [ qb:measure csu-measure:počet-přenocování-turistů ] .
+
+csu-dimension:kategorie-ubytovacího-zařízení a qb:DimensionProperty, qb:CodedProperty, rdf:Property ;
+  rdfs:label "Kategorie ubytovacího zařízení"@cs ;
+  qb:codeList csu-codelist:154 ;
+  rdfs:range csu:154 .
+
+csu-dimension:referenční-území a qb:DimensionProperty, qb:CodedProperty, rdf:Property ;
+  rdfs:label "Referenční území"@cs ;
+  rdfs:subPropertyOf sdmx-dimension:refArea ;
+  qb:codeList csu-codelist:65, csu-codelist:72, csu-codelist:97, csu-codelist:100, csu-codelist:101,
+              csu-codelist:427, csu-codelist:428 ;
+  rdfs:range [
+    a owl:Class ;
+    owl:unionOf (csu:65 csu:72 csu:97 csu:100 csu:101 csu:427 csu:428)
+  ] .
+
+csu-dimension:rok a qb:DimensionProperty, qb:CodedProperty, rdf:Property ;
+  rdfs:label "Rok"@cs ;
+  qb:concept sdmx-concept:refPeriod ;
+  rdfs:range interval:Year ;
+  rdfs:subPropertyOf sdmx-dimension:refPeriod .
+
+csu-dimension:území-původu a qb:DimensionProperty, qb:CodedProperty, rdf:Property ;
+  rdfs:label "Území původu"@cs ;
+  qb:codeList csu-codelist:86, csu-codelist:5898 ;
+  rdfs:range [
+    a owl:Class ;
+    owl:unionOf (csu:86 csu:5898)
+  ] .
+
+csu-measure:počet-turistů a qb:MeasureProperty, rdf:Property ;
+  rdfs:label "Počet turistů"@cs, "Number of tourists"@en ;
+  rdfs:range xsd:nonNegativeInteger ;
+  qb:concept <https://csu.opendata.cz/zdroj/řízený-slovník/stapro/pojem/2654> .
+
+csu-measure:počet-přenocování-turistů a qb:MeasureProperty, rdf:Property ;
+  rdfs:label "Počet přenocování turistů"@cs, "Number of nights spent by tourists"@en ;
+  rdfs:range xsd:nonNegativeInteger ;
+  qb:concept <https://csu.opendata.cz/zdroj/řízený-slovník/stapro/pojem/2655> .
