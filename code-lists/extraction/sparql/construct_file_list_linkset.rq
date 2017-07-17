@@ -1,0 +1,46 @@
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX skos:    <http://www.w3.org/2004/02/skos/core#>
+PREFIX sctfl:   <http://plugins.linkedpipes.com/ontology/t-sparqlConstructToFileList#>
+PREFIX void:    <http://rdfs.org/ns/void#>
+
+CONSTRUCT {
+  ?task a sctfl:Task ;
+    sctfl:fileFormat "application/trig" ;
+    sctfl:fileName ?fileName ;
+    sctfl:hasTaskQuery ?taskQuery . 
+
+  ?taskQuery a sctfl:TaskQuery ;
+    sctfl:outputGraph ?dataset ;
+    sctfl:query ?query .
+}
+WHERE {
+  ?dataset a void:Linkset ;
+    void:subjectsTarget/dcterms:identifier ?subjectsIdentifier ;
+    void:objectsTarget/dcterms:identifier ?objectsIdentifier .
+
+  BIND (concat(?subjectsIdentifier, "-", ?objectsIdentifier) AS ?identifier)
+  BIND (concat(?identifier, ".trig") AS ?fileName)
+
+  BIND (replace("""
+  PREFIX skos:    <http://www.w3.org/2004/02/skos/core#>
+  PREFIX void:    <http://rdfs.org/ns/void#>
+
+  CONSTRUCT {
+    <%dataset%> a ?class .
+    ?a ?linkPredicate ?b .
+  } WHERE {
+    <%dataset%> a ?class ;
+      void:subjectsTarget ?subjectsTarget ;
+      void:objectsTarget ?objectsTarget ;
+      void:linkPredicate ?linkPredicate .
+
+    ?a skos:inScheme ?subjectsTarget ;
+      ?linkPredicate ?b .
+    ?b skos:inScheme ?objectsTarget .
+  }
+  """, "%dataset%", str(?dataset)) AS ?query)
+
+  BIND ("http://localhost/" AS ?ns)
+  BIND (iri(concat(?ns, "task/", ?identifier)) AS ?task)
+  BIND (iri(concat(?ns, "task-query/", ?identifier)) AS ?taskQuery)
+}

@@ -1,0 +1,28 @@
+PREFIX :         <http://example.com/>
+PREFIX dcat:     <http://www.w3.org/ns/dcat#>
+PREFIX dcterms:  <http://purl.org/dc/terms/>
+PREFIX foaf:     <http://xmlns.com/foaf/0.1/>
+PREFIX httpList: <http://plugins.linkedpipes.com/ontology/e-httpGetFiles#>
+
+CONSTRUCT {
+  :configuration a httpList:Configuration ;
+    httpList:reference ?distribution .
+
+  ?distribution a httpList:Reference ;
+    httpList:fileUri ?url ;
+    httpList:fileName ?fileName .
+}
+WHERE {
+  {
+    SELECT DISTINCT ?distribution ?url ?fileName
+    WHERE {
+      [] a dcat:Dataset ;
+        dcterms:publisher <https://linked.opendata.cz/zdroj/ekonomický-subjekt/00025593> ;
+        dcat:keyword "číselník"@cs ;
+        dcat:distribution ?distribution .
+      ?distribution dcterms:format <http://publications.europa.eu/resource/authority/file-type/XML> ;
+        dcat:downloadURL ?url .
+      BIND (concat(sha1(?url), ".xml") AS ?fileName)
+    }
+  }
+}

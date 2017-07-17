@@ -1,0 +1,53 @@
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX skos:    <http://www.w3.org/2004/02/skos/core#>
+PREFIX sctfl:   <http://plugins.linkedpipes.com/ontology/t-sparqlConstructToFileList#>
+
+CONSTRUCT {
+  ?task a sctfl:Task ;
+    sctfl:fileFormat "application/trig" ;
+    sctfl:fileName ?fileName ;
+    sctfl:hasTaskQuery ?taskQuery . 
+
+  ?taskQuery a sctfl:TaskQuery ;
+    sctfl:outputGraph ?dataset ;
+    sctfl:query ?query .
+}
+WHERE {
+  ?dataset a skos:ConceptScheme ;
+    dcterms:identifier ?identifier .
+  BIND (concat(?identifier, ".trig") AS ?fileName)
+  BIND (replace("""
+  PREFIX dbo:     <http://dbpedia.org/ontology/>
+  PREFIX dcterms: <http://purl.org/dc/terms/>
+  PREFIX rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+  PREFIX rdfs:    <http://www.w3.org/2000/01/rdf-schema#>
+  PREFIX skos:    <http://www.w3.org/2004/02/skos/core#>
+
+  CONSTRUCT {
+    <%concept-scheme%> ?conceptSchemeProperty ?conceptSchemeObject .
+
+    ?concept skos:inScheme <%concept-scheme%> ;
+      ?conceptProperty ?conceptObject ;
+      dcterms:valid ?validity .
+
+    ?validity ?validityProperty ?validityObject .
+  } WHERE {
+    VALUES ?conceptSchemeProperty {
+      dbo:abbreviation
+      dcterms:identifier
+      rdf:type
+      rdfs:label
+    }
+    <%concept-scheme%> ?conceptSchemeProperty ?conceptSchemeObject .
+
+    ?concept skos:inScheme <%concept-scheme%> ;
+      ?conceptProperty ?conceptObject ;
+      dcterms:valid ?validity .
+    ?validity ?validityProperty ?validityObject .
+  }
+  """, "%concept-scheme%", str(?dataset)) AS ?query)
+
+  BIND ("http://localhost/" AS ?ns)
+  BIND (iri(concat(?ns, "task/", ?identifier)) AS ?task)
+  BIND (iri(concat(?ns, "task-query/", ?identifier)) AS ?taskQuery)
+}

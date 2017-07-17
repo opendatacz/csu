@@ -1,0 +1,97 @@
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX sctfl:   <http://plugins.linkedpipes.com/ontology/t-sparqlConstructToFileList#>
+PREFIX skos:    <http://www.w3.org/2004/02/skos/core#>
+PREFIX void:    <http://rdfs.org/ns/void#>
+
+CONSTRUCT {
+  ?task a sctfl:Task ;
+    sctfl:fileFormat "application/trig" ;
+    sctfl:fileName ?fileName ;
+    sctfl:hasTaskQuery ?taskQuery . 
+
+  ?taskQuery a sctfl:TaskQuery ;
+    sctfl:outputGraph ?graph ;
+    sctfl:query ?query .
+}
+WHERE {
+  {
+    ?dataset a skos:ConceptScheme ;
+      dcterms:identifier ?identifier .
+  } UNION {
+    ?dataset a void:Linkset ;
+      void:subjectsTarget/dcterms:identifier ?subjectsIdentifier ;
+      void:objectsTarget/dcterms:identifier ?objectsIdentifier .
+    BIND (concat(?subjectsIdentifier, "-", ?objectsIdentifier) AS ?identifier)
+  }
+  BIND (concat(?identifier, "_metadata.trig") AS ?fileName)
+  BIND (iri(concat(str(?dataset), "/metadata")) As ?graph)
+
+  BIND (replace("""
+  PREFIX dcat:    <http://www.w3.org/ns/dcat#>
+  PREFIX dcterms: <http://purl.org/dc/terms/>
+  PREFIX foaf:    <http://xmlns.com/foaf/0.1/>
+  PREFIX prov:    <http://www.w3.org/ns/prov#>
+  PREFIX rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+  PREFIX rdfs:    <http://www.w3.org/2000/01/rdf-schema#>
+  PREFIX skos:    <http://www.w3.org/2004/02/skos/core#>
+  PREFIX void:    <http://rdfs.org/ns/void#>
+  PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
+
+  CONSTRUCT {
+    <%dataset%> a dcat:Dataset ;
+      ?datasetProperty ?datasetObject ;
+      dcterms:title ?label ;
+      dcterms:publisher <https://www.czso.cz> ;
+      dcat:distribution <%dataset%/distribution> .
+
+    ?s ?p ?o .
+
+    <https://www.czso.cz> a foaf:Agent ;
+      dcterms:type <http://purl.org/adms/publishertype/NationalAuthority> ;
+      foaf:name "Czech Statistical Office"@cs , "Český statistický úřad"@cs .
+
+    <%dataset%/distribution> a dcat:Distribution ;
+      dcterms:modified ?now ;
+      dcterms:format <http://publications.europa.eu/resource/authority/file-type/RDF_TRIG> ;
+      dcat:accessURL ?downloadUrl ;
+      dcat:downloadURL ?downloadUrl ;
+      void:dataDump ?downloadUrl ;
+      dcat:mediaType <http://www.iana.org/assignments/media-types/application/trig> ;
+      void:sparqlEndpoint <https://csu.opendata.cz/sparql> .
+
+    <http://www.iana.org/assignments/media-types/application/trig> a dcterms:MediaTypeOrExtent .
+    <http://publications.europa.eu/resource/authority/file-type/RDF_TRIG> a dcterms:MediaTypeOrExtent .
+  } WHERE {
+    VALUES ?datasetProperty {
+      dcterms:identifier
+      dcterms:language
+      dcterms:type
+      void:linkPredicate
+      void:objectsTarget
+      void:subjectsTarget
+    }
+    <%dataset%> a ?class ;
+      dcterms:identifier ?identifier ;
+      ?datasetProperty ?datasetObject .
+
+    OPTIONAL {
+      <%dataset%> rdfs:label ?label .
+    }
+    
+    OPTIONAL {
+      VALUES (?class ?s ?p ?o) {
+        (skos:ConceptScheme
+        <%dataset%> dcterms:language <http://publications.europa.eu/resource/authority/language/CES>)
+        (skos:ConceptScheme
+        <http://publications.europa.eu/resource/authority/language/CES> rdf:type dcterms:LinguisticSystem)
+      }
+    }
+    BIND (strdt(now(), xsd:date) AS ?now)
+    BIND (iri(concat("https://csu.opendata.cz/soubor/", ?identifier, ".trig")) AS ?downloadUrl)
+  }
+  """, "%dataset%", str(?dataset)) AS ?query)
+
+  BIND ("http://localhost/" AS ?ns)
+  BIND (iri(concat(?ns, "task/", ?identifier)) AS ?task)
+  BIND (iri(concat(?ns, "task-query/", ?identifier)) AS ?taskQuery)
+}
