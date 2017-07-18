@@ -51,11 +51,16 @@ WHERE {
 
 DELETE {
   ?conceptScheme ?p ?o .
+  ?class ?classP ?classO .
+  ?concept a ?class .
 }
 WHERE {
   [] void:linkPredicate skos:narrowMatch ;
     void:objectsTarget ?conceptScheme .
   ?conceptScheme ?p ?o .
+  ?class rdfs:seeAlso ?conceptScheme ;
+    ?classP ?classO .
+  ?concept a ?class .
 }
 ;
 
