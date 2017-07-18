@@ -91,13 +91,13 @@ WHERE {
     SELECT DISTINCT ?_concept ?concept
     WHERE {
       ?_concept skos:inScheme/dcterms:identifier ?identifier .
-      FILTER (!strstarts(str(?_concept), concat("https://csu.opendata.cz/zdroj/", ?identifier)))
+      FILTER (!strstarts(str(?_concept), concat("https://csu.opendata.cz/zdroj/řízený-slovník/", ?identifier)))
       ?_concept skos:notation ?notation .
-      BIND (iri(concat("https://csu.opendata.cz/zdroj/",
+      BIND (iri(concat("https://csu.opendata.cz/zdroj/řízený-slovník/",
                       ?identifier,
                       "/pojem/",
-                      encode_for_uri(?notation))
-              ) AS ?concept)
+                      encode_for_uri(?notation)
+                      )) AS ?concept)
     }
   }
   ?_concept ?outP ?outO .

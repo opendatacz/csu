@@ -255,8 +255,8 @@
             <void:linkPredicate rdf:resource="{replace($link-predicate, 'skos:', '&skos;')}"/>
         </void:Linkset>
         <xsl:apply-templates select="DATA" mode="mapping">
-            <xsl:with-param name="source-ns" select="concat($ns, $source-code, '/pojem/')"/>
-            <xsl:with-param name="target-ns" select="concat($ns, $target-code, '/pojem/')"/>
+            <xsl:with-param name="source-ns" select="concat($ns, 'řízený-slovník/', $source-code, '/pojem/')"/>
+            <xsl:with-param name="target-ns" select="concat($ns, 'řízený-slovník/', $target-code, '/pojem/')"/>
             <xsl:with-param name="link-predicate" select="$link-predicate"/>
         </xsl:apply-templates>
     </xsl:template>
