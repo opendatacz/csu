@@ -17,7 +17,6 @@ WHERE {
     dcterms:identifier ?identifier .
   BIND (concat(?identifier, ".trig") AS ?fileName)
   BIND (replace("""
-  PREFIX dbo:     <http://dbpedia.org/ontology/>
   PREFIX dcterms: <http://purl.org/dc/terms/>
   PREFIX rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
   PREFIX rdfs:    <http://www.w3.org/2000/01/rdf-schema#>
@@ -32,12 +31,6 @@ WHERE {
 
     ?validity ?validityProperty ?validityObject .
   } WHERE {
-    VALUES ?conceptSchemeProperty {
-      dbo:abbreviation
-      dcterms:identifier
-      rdf:type
-      rdfs:label
-    }
     <%concept-scheme%> ?conceptSchemeProperty ?conceptSchemeObject .
 
     ?concept skos:inScheme <%concept-scheme%> ;
