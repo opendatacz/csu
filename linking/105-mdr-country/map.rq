@@ -1,0 +1,12 @@
+PREFIX atold: <http://publications.europa.eu/resource/authority/>
+PREFIX skos:  <http://www.w3.org/2004/02/skos/core#>
+
+CONSTRUCT {
+  ?source skos:exactMatch ?target .
+}
+WHERE {
+  ?source skos:inScheme <https://csu.opendata.cz/zdroj/řízený-slovník/105> ;
+    skos:prefLabel ?label .
+  ?target skos:inScheme atold:country ;
+    skos:prefLabel ?label .
+}
