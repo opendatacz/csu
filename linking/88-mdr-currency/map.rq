@@ -15,10 +15,7 @@ WHERE {
     dcterms:valid/schema:startDate ?sourceStartDate .
 
   ?target skos:inScheme atold:currency ;
-    dc:identifier ?notation ;
-    at:start.use ?targetStartDate .
-
-  FILTER (?sourceStartDate >= strdt(?targetStartDate, xsd:date))
+    dc:identifier ?notation .
 
   OPTIONAL {
     ?target at:end.use ?targetEndDate .
