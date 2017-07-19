@@ -4,6 +4,6 @@
 <https://csu.opendata.cz/zdroj/mapování/63-ruian/metadata> {
   <https://csu.opendata.cz/zdroj/mapování/63-ruian> a void:Linkset ;
     void:subjectsTarget <https://csu.opendata.cz/zdroj/řízený-slovník/64> ;
-    void:objectsTarget  <https://ruian.linked.opendata.cz/zdroj/datová-sada/rúian> ;
+    void:objectsTarget <https://ruian.linked.opendata.cz/zdroj/datová-sada/rúian> ;
     void:linkPredicate skos:exactMatch .
 }
