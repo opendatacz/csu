@@ -1,0 +1,9 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+
+<https://csu.opendata.cz/zdroj/mapování/101-cssz-ciselnik-okresu/metadata> {
+  <https://csu.opendata.cz/zdroj/mapování/101-cssz-ciselnik-okresu> a void:Linkset ;
+    void:subjectsTarget <https://csu.opendata.cz/zdroj/řízený-slovník/101> ;
+    void:objectsTarget <https://data.cssz.cz/resource/ciselniky/ciselnik-okresu/ConceptScheme> ;
+    void:linkPredicate skos:exactMatch .
+}

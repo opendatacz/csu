@@ -1,0 +1,11 @@
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+CONSTRUCT {
+  ?source skos:exactMatch ?target .
+}
+WHERE {
+  ?source skos:inScheme <https://csu.opendata.cz/zdroj/řízený-slovník/101> ;
+    skos:prefLabel ?label .
+  ?target skos:inScheme <https://data.cssz.cz/resource/ciselniky/ciselnik-okresu/ConceptScheme> ;
+    skos:prefLabel ?label .
+}
