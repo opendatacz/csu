@@ -1,0 +1,50 @@
+PREFIX at:      <http://publications.europa.eu/ontology/authority/>
+PREFIX atold:   <http://publications.europa.eu/resource/authority/>
+PREFIX csu:     <https://csu.opendata.cz/zdroj/řízený-slovník/86/pojem/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX mdr:     <http://publications.europa.eu/resource/authority/country/>
+PREFIX schema:  <http://schema.org/>
+PREFIX skos:    <http://www.w3.org/2004/02/skos/core#>
+PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
+
+CONSTRUCT {
+  ?source skos:exactMatch ?target .
+}
+WHERE {
+  ?source skos:inScheme <https://csu.opendata.cz/zdroj/řízený-slovník/86> ;
+    dcterms:valid/schema:startDate ?sourceStartDate .
+  ?target skos:inScheme atold:country .
+
+  OPTIONAL {
+    ?target at:end.use ?targetEndDate .
+  }
+  FILTER (!bound(?targetEndDate) || ?sourceStartDate < strdt(?targetEndDate, xsd:date))
+
+  {
+    ?source skos:prefLabel ?label .
+    FILTER langMatches(lang(?label), "cs")
+    ?target skos:prefLabel|skos:altLabel ?label .
+  } UNION {
+    ?source skos:definition ?definition .
+    ?target skos:prefLabel ?label .
+    FILTER (langMatches(lang(?label), "cs")
+            &&
+            strafter(?definition, "Oficiální zkrácený název: ") = replace(str(?label), "-", " "))
+  } UNION {
+    # Manual mapping table for discordant labels
+    VALUES (?source ?target) {
+           (csu:090 mdr:SLB) # "Šalomounovy ostrovy" => "Šalamounovy ostrovy"
+           (csu:096 mdr:BRN) # "Stát Brunej Darussalam" => "Brunej"
+           (csu:104 mdr:MMR) # "Myanma" => "Myanmar/Barma"
+           (csu:158 mdr:TWN) # "Čínská republika (Tchaj-wan)" => "Tchaj-wan"
+           (csu:248 mdr:ALA) # "Provincie Alandy" => "Alandy"
+           (csu:275 mdr:PSE) # "Palestinská autonomní území" => "Palestina"
+           (csu:336 mdr:VAT) # "Vatikánský městský stát" => "Městský stát Vatikán"
+           (csu:434 mdr:LBY) # "Libyjský stát" => "Libye"
+           (csu:534 mdr:SXM) # "Svatý Martin (NL)" => "Sint Maarten"
+           (csu:663 mdr:MAF) # "Společenství Svatý Martin" => "Svatý Martin"
+           (csu:834 mdr:TZA) # "Tanzanská sjednocená republika" => "Sjednocená republika Tanzanie"
+           (csu:876 mdr:WLF) # "Wallis a Futuna" => "Ostrovy Wallis a Futuna"
+    }
+  }
+}

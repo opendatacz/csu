@@ -1,0 +1,10 @@
+@prefix atold: <http://publications.europa.eu/resource/authority/> .
+@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+
+<https://csu.opendata.cz/zdroj/mapování/86-mdr-country/metadata> {
+  <https://csu.opendata.cz/zdroj/mapování/86-mdr-country> a void:Linkset ;
+    void:subjectsTarget <https://csu.opendata.cz/zdroj/řízený-slovník/86> ;
+    void:objectsTarget atold:country ;
+    void:linkPredicate skos:exactMatch .
+}
