@@ -1,0 +1,10 @@
+@prefix atold: <http://publications.europa.eu/resource/authority/> .
+@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+
+<https://csu.opendata.cz/zdroj/mapování/88-mdr-currency/metadata> {
+  <https://csu.opendata.cz/zdroj/mapování/88-mdr-currency> a void:Linkset ;
+    void:subjectsTarget <https://csu.opendata.cz/zdroj/řízený-slovník/88> ;
+    void:objectsTarget atold:currency ;
+    void:linkPredicate skos:exactMatch .
+}

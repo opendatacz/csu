@@ -1,0 +1,27 @@
+PREFIX at:      <http://publications.europa.eu/ontology/authority/>
+PREFIX atold:   <http://publications.europa.eu/resource/authority/>
+PREFIX dc:      <http://purl.org/dc/elements/1.1/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX schema:  <http://schema.org/>
+PREFIX skos:    <http://www.w3.org/2004/02/skos/core#>
+PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
+
+CONSTRUCT {
+  ?source skos:exactMatch ?target .
+}
+WHERE {
+  ?source skos:inScheme <https://csu.opendata.cz/zdroj/řízený-slovník/88> ;
+    skos:notation ?notation ;
+    dcterms:valid/schema:startDate ?sourceStartDate .
+
+  ?target skos:inScheme atold:currency ;
+    dc:identifier ?notation ;
+    at:start.use ?targetStartDate .
+
+  FILTER (?sourceStartDate >= strdt(?targetStartDate, xsd:date))
+
+  OPTIONAL {
+    ?target at:end.use ?targetEndDate .
+  }
+  FILTER (!bound(?targetEndDate) || ?sourceStartDate < strdt(?targetEndDate, xsd:date))
+}
