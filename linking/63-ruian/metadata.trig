@@ -1,0 +1,9 @@
+@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+
+<https://csu.opendata.cz/zdroj/mapování/63-ruian/metadata> {
+  <https://csu.opendata.cz/zdroj/mapování/63-ruian> a void:Linkset ;
+    void:subjectsTarget <https://csu.opendata.cz/zdroj/řízený-slovník/64> ;
+    void:objectsTarget  <https://ruian.linked.opendata.cz/zdroj/datová-sada/rúian> ;
+    void:linkPredicate skos:exactMatch .
+}
