@@ -18,7 +18,11 @@
               "@id": "http://localhost:8080/resources/pipelines/created-1500473832996/2"
             }
           ],
-          "http://www.w3.org/2004/02/skos/core#prefLabel": "Linkování RÚIAN na ČSU 63"
+          "http://www.w3.org/2004/02/skos/core#prefLabel": [
+            {
+              "@value": "Linkování RÚIAN na ČSU 63"
+            }
+          ]
         },
         {
           "@id": "http://localhost:8080/resources/pipelines/created-1500473832996/10",
@@ -166,12 +170,16 @@
           "@type": [
             "http://linkedpipes.com/ontology/ExecutionProfile"
           ],
-          "http://linkedpipes.com/ontology/rdfRepositoryPolicy": {
-            "@id": "http://linkedpipes.com/ontology/repository/SingleRepository"
-          },
-          "http://linkedpipes.com/ontology/rdfRepositoryType": {
-            "@id": "http://linkedpipes.com/ontology/repository/NativeStore"
-          }
+          "http://linkedpipes.com/ontology/rdfRepositoryPolicy": [
+            {
+              "@id": "http://linkedpipes.com/ontology/repository/SingleRepository"
+            }
+          ],
+          "http://linkedpipes.com/ontology/rdfRepositoryType": [
+            {
+              "@id": "http://linkedpipes.com/ontology/repository/NativeStore"
+            }
+          ]
         },
         {
           "@id": "http://localhost:8080/resources/pipelines/created-1500473832996/20",
@@ -1071,7 +1079,7 @@
           ],
           "http://plugins.linkedpipes.com/ontology/t-rdfToFile#graphUri": [
             {
-              "@id": "https://csu.opendata.cz/zdroj/mapování/ruian-63"
+              "@id": "https://csu.opendata.cz/zdroj/mapování/rúian-63"
             }
           ],
           "http://plugins.linkedpipes.com/ontology/t-rdfToFile#graphUriControl": [
