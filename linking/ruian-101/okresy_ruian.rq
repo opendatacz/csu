@@ -1,0 +1,13 @@
+PREFIX rúian:  <https://ruian.linked.opendata.cz/slovník/>
+PREFIX schema: <http://schema.org/>
+
+CONSTRUCT {
+  ?okres a rúian:Okres ;
+    schema:name ?name .
+}
+WHERE {
+  GRAPH <https://ruian.linked.opendata.cz/zdroj/datová-sada/rúian> {
+    ?okres a rúian:Okres ;
+      schema:name ?name .
+  }
+}
