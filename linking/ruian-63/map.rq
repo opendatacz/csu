@@ -5,8 +5,8 @@ CONSTRUCT {
   ?source skos:exactMatch ?target .
 }
 WHERE {
-  ?source skos:inScheme <https://csu.opendata.cz/zdroj/řízený-slovník/63> ;
+  ?target skos:inScheme <https://csu.opendata.cz/zdroj/řízený-slovník/63> ;
     skos:notation ?notation .
-  ?target a ruian:KatastrálníÚzemí ;
+  ?source a ruian:KatastrálníÚzemí ;
     skos:notation ?notation .
 }

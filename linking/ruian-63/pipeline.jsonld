@@ -18,11 +18,7 @@
               "@id": "http://localhost:8080/resources/pipelines/created-1500473832996/2"
             }
           ],
-          "http://www.w3.org/2004/02/skos/core#prefLabel": [
-            {
-              "@value": "Linkování ČSU 63 na RÚIAN"
-            }
-          ]
+          "http://www.w3.org/2004/02/skos/core#prefLabel": "Linkování RÚIAN na ČSU 63"
         },
         {
           "@id": "http://localhost:8080/resources/pipelines/created-1500473832996/10",
@@ -170,16 +166,12 @@
           "@type": [
             "http://linkedpipes.com/ontology/ExecutionProfile"
           ],
-          "http://linkedpipes.com/ontology/rdfRepositoryPolicy": [
-            {
-              "@id": "http://linkedpipes.com/ontology/repository/SingleRepository"
-            }
-          ],
-          "http://linkedpipes.com/ontology/rdfRepositoryType": [
-            {
-              "@id": "http://linkedpipes.com/ontology/repository/NativeStore"
-            }
-          ]
+          "http://linkedpipes.com/ontology/rdfRepositoryPolicy": {
+            "@id": "http://linkedpipes.com/ontology/repository/SingleRepository"
+          },
+          "http://linkedpipes.com/ontology/rdfRepositoryType": {
+            "@id": "http://linkedpipes.com/ontology/repository/NativeStore"
+          }
         },
         {
           "@id": "http://localhost:8080/resources/pipelines/created-1500473832996/20",
@@ -930,7 +922,7 @@
           ],
           "http://plugins.linkedpipes.com/ontology/t-sparqlConstruct#query": [
             {
-              "@value": "PREFIX ruian: <https://ruian.linked.opendata.cz/slovník/>\nPREFIX skos:  <http://www.w3.org/2004/02/skos/core#>\n\nCONSTRUCT {\n  ?source skos:exactMatch ?target .\n}\nWHERE {\n  ?source skos:inScheme <https://csu.opendata.cz/zdroj/řízený-slovník/63> ;\n    skos:notation ?notation .\n  ?target a ruian:KatastrálníÚzemí ;\n    skos:notation ?notation .\n}"
+              "@value": "PREFIX ruian: <https://ruian.linked.opendata.cz/slovník/>\nPREFIX skos:  <http://www.w3.org/2004/02/skos/core#>\n\nCONSTRUCT {\n  ?source skos:exactMatch ?target .\n}\nWHERE {\n  ?target skos:inScheme <https://csu.opendata.cz/zdroj/řízený-slovník/63> ;\n    skos:notation ?notation .\n  ?source a ruian:KatastrálníÚzemí ;\n    skos:notation ?notation .\n}"
             }
           ],
           "http://plugins.linkedpipes.com/ontology/t-sparqlConstruct#queryControl": [
@@ -1028,7 +1020,7 @@
           ],
           "http://plugins.linkedpipes.com/ontology/e-textHolder#content": [
             {
-              "@value": "@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .\n@prefix void:  <http://rdfs.org/ns/void#> .\n\n<https://csu.opendata.cz/zdroj/mapování/63-ruian/metadata> {\n  <https://csu.opendata.cz/zdroj/mapování/63-ruian> a void:Linkset ;\n    void:subjectsTarget <https://csu.opendata.cz/zdroj/řízený-slovník/64> ;\n    void:objectsTarget  <https://ruian.linked.opendata.cz/zdroj/datová-sada/rúian> ;\n    void:linkPredicate skos:exactMatch .\n}"
+              "@value": "@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .\n@prefix void:  <http://rdfs.org/ns/void#> .\n\n<https://csu.opendata.cz/zdroj/mapování/rúian-63/metadata> {\n  <https://csu.opendata.cz/zdroj/mapování/rúian-63> a void:Linkset ;\n    void:subjectsTarget  <https://ruian.linked.opendata.cz/zdroj/datová-sada/rúian> ;\n    void:objectsTarget <https://csu.opendata.cz/zdroj/řízený-slovník/63> ;\n    void:linkPredicate skos:exactMatch .\n}"
             }
           ],
           "http://plugins.linkedpipes.com/ontology/e-textHolder#contentControl": [
@@ -1038,7 +1030,7 @@
           ],
           "http://plugins.linkedpipes.com/ontology/e-textHolder#fileName": [
             {
-              "@value": "63_ruian_metadata.trig"
+              "@value": "ruian_63_metadata.trig"
             }
           ],
           "http://plugins.linkedpipes.com/ontology/e-textHolder#fileNameControl": [
@@ -1059,7 +1051,7 @@
           ],
           "http://plugins.linkedpipes.com/ontology/t-rdfToFile#fileName": [
             {
-              "@value": "63_ruian.trig"
+              "@value": "ruian_63.trig"
             }
           ],
           "http://plugins.linkedpipes.com/ontology/t-rdfToFile#fileNameControl": [
@@ -1079,7 +1071,7 @@
           ],
           "http://plugins.linkedpipes.com/ontology/t-rdfToFile#graphUri": [
             {
-              "@id": "https://csu.opendata.cz/zdroj/mapování/63-ruian"
+              "@id": "https://csu.opendata.cz/zdroj/mapování/ruian-63"
             }
           ],
           "http://plugins.linkedpipes.com/ontology/t-rdfToFile#graphUriControl": [
@@ -1121,7 +1113,7 @@
           ],
           "http://plugins.linkedpipes.com/ontology/x-virtuoso#fileName": [
             {
-              "@value": "63_ruian_metadata.trig"
+              "@value": "ruian_63_metadata.trig"
             }
           ],
           "http://plugins.linkedpipes.com/ontology/x-virtuoso#fileNameControl": [
@@ -1246,7 +1238,7 @@
           ],
           "http://plugins.linkedpipes.com/ontology/x-virtuoso#fileName": [
             {
-              "@value": "63_ruian.trig"
+              "@value": "ruian_63.trig"
             }
           ],
           "http://plugins.linkedpipes.com/ontology/x-virtuoso#fileNameControl": [
