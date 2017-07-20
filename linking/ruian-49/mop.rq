@@ -1,0 +1,14 @@
+PREFIX rúian:  <https://ruian.linked.opendata.cz/slovník/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+CONSTRUCT {
+  ?mop a rúian:Mop ;
+    skos:notation ?notation .
+}
+WHERE {
+  GRAPH <https://ruian.linked.opendata.cz/zdroj/datová-sada/rúian> {
+    ?mop a rúian:Mop ;
+      skos:notation ?_notation .
+    BIND (if(strlen(?_notation) = 2, concat("0", ?_notation), ?_notation) AS ?notation)
+  }
+}

@@ -1,0 +1,13 @@
+PREFIX rúian:  <https://ruian.linked.opendata.cz/slovník/>
+PREFIX schema: <http://schema.org/>
+PREFIX skos:   <http://www.w3.org/2004/02/skos/core#>
+
+CONSTRUCT {
+  ?source skos:exactMatch ?target .
+}
+WHERE {
+  ?target skos:inScheme <https://csu.opendata.cz/zdroj/řízený-slovník/49> ;
+    skos:notation ?notation .
+  ?source a rúian:Mop ;
+    skos:notation ?notation .
+}
