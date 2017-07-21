@@ -1,0 +1,13 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wdt:  <http://www.wikidata.org/prop/direct/>
+PREFIX wd:   <http://www.wikidata.org/entity/>
+
+CONSTRUCT {
+  ?castPrahy a wd:Q585444 ;
+    rdfs:label ?label .
+}
+WHERE {
+  ?castPrahy wdt:P31 wd:Q585444 ;
+    rdfs:label ?label .
+  FILTER langMatches(lang(?label), "cs")
+}

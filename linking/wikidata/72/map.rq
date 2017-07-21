@@ -1,0 +1,13 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX wd:   <http://www.wikidata.org/entity/>
+
+CONSTRUCT {
+  ?source skos:exactMatch ?target .
+}
+WHERE {
+  ?source skos:inScheme <https://csu.opendata.cz/zdroj/řízený-slovník/72> ;
+    skos:prefLabel ?label .
+  ?target a wd:Q585444 ;
+    rdfs:label ?label .
+}
