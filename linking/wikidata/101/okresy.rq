@@ -1,0 +1,15 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX wdt:  <http://www.wikidata.org/prop/direct/>
+PREFIX wd:   <http://www.wikidata.org/entity/>
+
+CONSTRUCT {
+  ?okres a wd:Q548611 ;
+    rdfs:label ?label .
+}
+WHERE {
+  ?okres wdt:P31 wd:Q548611 ;
+    rdfs:label|skos:altLabel ?_label .
+  FILTER langMatches(lang(?_label), "cs")
+  BIND (strlang(replace(str(?_label), "okres\\s+", ""), "cs") AS ?label)
+}

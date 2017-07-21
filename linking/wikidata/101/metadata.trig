@@ -1,0 +1,9 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+
+<https://csu.opendata.cz/zdroj/mapování/101-wikidata/metadata> {
+  <https://csu.opendata.cz/zdroj/mapování/101-wikidata> a void:Linkset ;
+    void:subjectsTarget <https://csu.opendata.cz/zdroj/řízený-slovník/101> ;
+    void:objectsTarget <https://www.wikidata.org> ;
+    void:linkPredicate skos:exactMatch .
+}
