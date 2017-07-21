@@ -1,0 +1,14 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wdt:  <http://www.wikidata.org/prop/direct/>
+PREFIX wd:   <http://www.wikidata.org/entity/>
+
+CONSTRUCT {
+  ?s skos:notation ?nuts ;
+     rdfs:label ?label .
+}
+WHERE {
+  ?s wdt:P17 wd:Q213 ;
+     wdt:P605 ?nuts ;
+     rdfs:label ?label .
+  FILTER langMatches(lang(?label), "cs")
+}

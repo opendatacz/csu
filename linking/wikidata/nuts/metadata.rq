@@ -1,0 +1,12 @@
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX void: <http://rdfs.org/ns/void#>
+
+CONSTRUCT {
+  <https://csu.opendata.cz/zdroj/mapování/csu-nuts-wikidata> a void:Linkset ;
+    void:subjectsTarget ?conceptScheme ;
+    void:objectsTarget <https://www.wikidata.org> ;
+    void:linkPredicate skos:exactMatch .
+}
+WHERE {
+	[] skos:inScheme ?conceptScheme .
+}
