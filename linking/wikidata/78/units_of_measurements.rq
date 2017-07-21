@@ -1,0 +1,18 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX wdt:  <http://www.wikidata.org/prop/direct/>
+PREFIX wd:   <http://www.wikidata.org/entity/>
+
+CONSTRUCT {
+  ?unit a wd:Q47574 ;
+        rdfs:label ?label .
+}
+WHERE {
+  ?unit wdt:P31/wdt:P279* wd:Q47574 ;
+    rdfs:label|skos:altLabel ?_label .
+  FILTER langMatches(lang(?_label), "cs")
+  BIND (strlang(lcase(if(strends(str(?_label), "čtvereční"),
+                         concat("čtverečný ", strbefore(str(?_label), " čtvereční")),
+                         str(?_label)
+                         )), "cs") AS ?label)
+}
