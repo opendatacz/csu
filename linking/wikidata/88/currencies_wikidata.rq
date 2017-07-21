@@ -1,0 +1,17 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wdt:  <http://www.wikidata.org/prop/direct/>
+PREFIX wd:   <http://www.wikidata.org/entity/>
+
+CONSTRUCT {
+  ?currency a wd:Q8142 ;
+            rdfs:label ?label .
+}
+WHERE {
+  ?currency wdt:P31 wd:Q8142 .
+  FILTER NOT EXISTS {
+    ?currency wdt:P582 [] .
+  }
+  ?currency rdfs:label|skos:altLabel ?_label .
+  FILTER langMatches(lang(?_label), "cs")
+  BIND (strlang(lcase(str(?_label)), "cs") AS ?label)
+}
