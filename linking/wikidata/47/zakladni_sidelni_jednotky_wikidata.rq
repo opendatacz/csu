@@ -1,0 +1,14 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wdt:  <http://www.wikidata.org/prop/direct/>
+PREFIX wd:   <http://www.wikidata.org/entity/>
+
+CONSTRUCT {
+  ?zsj wdt:P131 ?okres ;
+    rdfs:label ?label .
+}
+WHERE {
+  ?zsj wdt:P31 wd:Q329245 ;
+    wdt:P131 ?okres ;
+    rdfs:label|skos:altLabel ?label .
+  FILTER langMatches(lang(?label), "cs")
+}
