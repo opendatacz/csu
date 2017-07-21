@@ -114,6 +114,12 @@
               "@id": "http://localhost:8080/resources/pipelines/created-1497634139243/19"
             }
           ],
+          "http://linkedpipes.com/ontology/disabled": [
+            {
+              "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+              "@value": "true"
+            }
+          ],
           "http://linkedpipes.com/ontology/template": [
             {
               "@id": "http://etl.linkedpipes.com/resources/components/e-httpGetFiles/0.0.0"
@@ -145,6 +151,12 @@
           "http://linkedpipes.com/ontology/configurationGraph": [
             {
               "@id": "http://localhost:8080/resources/pipelines/created-1497634139243/25"
+            }
+          ],
+          "http://linkedpipes.com/ontology/disabled": [
+            {
+              "@type": "http://www.w3.org/2001/XMLSchema#boolean",
+              "@value": "true"
             }
           ],
           "http://linkedpipes.com/ontology/template": [
@@ -194,7 +206,7 @@
           "http://linkedpipes.com/ontology/y": [
             {
               "@type": "http://www.w3.org/2001/XMLSchema#integer",
-              "@value": "480"
+              "@value": "540"
             }
           ],
           "http://purl.org/dc/terms/description": [
@@ -232,7 +244,7 @@
           "http://linkedpipes.com/ontology/y": [
             {
               "@type": "http://www.w3.org/2001/XMLSchema#integer",
-              "@value": "560"
+              "@value": "640"
             }
           ],
           "http://www.w3.org/2004/02/skos/core#prefLabel": [
@@ -265,7 +277,7 @@
           "http://linkedpipes.com/ontology/y": [
             {
               "@type": "http://www.w3.org/2001/XMLSchema#integer",
-              "@value": "360"
+              "@value": "400"
             }
           ],
           "http://purl.org/dc/terms/description": [
@@ -303,12 +315,45 @@
           "http://linkedpipes.com/ontology/y": [
             {
               "@type": "http://www.w3.org/2001/XMLSchema#integer",
-              "@value": "300"
+              "@value": "340"
             }
           ],
           "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
               "@value": "SPARQL construct to file list"
+            }
+          ]
+        },
+        {
+          "@id": "http://localhost:8080/resources/pipelines/created-1497634139243/components/70f7005f-b59d-4d5b-b34d-88df120707d6",
+          "@type": [
+            "http://linkedpipes.com/ontology/Component"
+          ],
+          "http://linkedpipes.com/ontology/configurationGraph": [
+            {
+              "@id": "http://localhost:8080/resources/pipelines/created-1497634139243/components/70f7005f-b59d-4d5b-b34d-88df120707d6/configuration"
+            }
+          ],
+          "http://linkedpipes.com/ontology/template": [
+            {
+              "@id": "http://etl.linkedpipes.com/resources/components/e-filesFromLocal/0.0.0"
+            }
+          ],
+          "http://linkedpipes.com/ontology/x": [
+            {
+              "@type": "http://www.w3.org/2001/XMLSchema#integer",
+              "@value": "300"
+            }
+          ],
+          "http://linkedpipes.com/ontology/y": [
+            {
+              "@type": "http://www.w3.org/2001/XMLSchema#integer",
+              "@value": "20"
+            }
+          ],
+          "http://www.w3.org/2004/02/skos/core#prefLabel": [
+            {
+              "@value": "Files from local"
             }
           ]
         },
@@ -330,13 +375,13 @@
           "http://linkedpipes.com/ontology/x": [
             {
               "@type": "http://www.w3.org/2001/XMLSchema#integer",
-              "@value": "1040"
+              "@value": "1060"
             }
           ],
           "http://linkedpipes.com/ontology/y": [
             {
               "@type": "http://www.w3.org/2001/XMLSchema#integer",
-              "@value": "560"
+              "@value": "640"
             }
           ],
           "http://www.w3.org/2004/02/skos/core#prefLabel": [
@@ -379,6 +424,39 @@
           ]
         },
         {
+          "@id": "http://localhost:8080/resources/pipelines/created-1497634139243/components/8fe9b87f-ee12-4ff4-8e42-dcdea847a6ba",
+          "@type": [
+            "http://linkedpipes.com/ontology/Component"
+          ],
+          "http://linkedpipes.com/ontology/configurationGraph": [
+            {
+              "@id": "http://localhost:8080/resources/pipelines/created-1497634139243/components/8fe9b87f-ee12-4ff4-8e42-dcdea847a6ba/configuration"
+            }
+          ],
+          "http://linkedpipes.com/ontology/template": [
+            {
+              "@id": "http://etl.linkedpipes.com/resources/components/t-filesToRdfChunked/0.0.0"
+            }
+          ],
+          "http://linkedpipes.com/ontology/x": [
+            {
+              "@type": "http://www.w3.org/2001/XMLSchema#integer",
+              "@value": "440"
+            }
+          ],
+          "http://linkedpipes.com/ontology/y": [
+            {
+              "@type": "http://www.w3.org/2001/XMLSchema#integer",
+              "@value": "240"
+            }
+          ],
+          "http://www.w3.org/2004/02/skos/core#prefLabel": [
+            {
+              "@value": "Files to RDF Chunked"
+            }
+          ]
+        },
+        {
           "@id": "http://localhost:8080/resources/pipelines/created-1497634139243/components/97ecd62f-bc72-4041-bcaf-9150e8a8599b",
           "@type": [
             "http://linkedpipes.com/ontology/Component"
@@ -402,12 +480,45 @@
           "http://linkedpipes.com/ontology/y": [
             {
               "@type": "http://www.w3.org/2001/XMLSchema#integer",
-              "@value": "440"
+              "@value": "520"
             }
           ],
           "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
               "@value": "SPARQL construct to file list"
+            }
+          ]
+        },
+        {
+          "@id": "http://localhost:8080/resources/pipelines/created-1497634139243/components/9903a35d-143c-40fa-8e47-5662f7cdb841",
+          "@type": [
+            "http://linkedpipes.com/ontology/Component"
+          ],
+          "http://linkedpipes.com/ontology/configurationGraph": [
+            {
+              "@id": "http://localhost:8080/resources/pipelines/created-1497634139243/components/9903a35d-143c-40fa-8e47-5662f7cdb841/configuration"
+            }
+          ],
+          "http://linkedpipes.com/ontology/template": [
+            {
+              "@id": "http://etl.linkedpipes.com/resources/components/t-chunkedToGraph/0.0.0"
+            }
+          ],
+          "http://linkedpipes.com/ontology/x": [
+            {
+              "@type": "http://www.w3.org/2001/XMLSchema#integer",
+              "@value": "60"
+            }
+          ],
+          "http://linkedpipes.com/ontology/y": [
+            {
+              "@type": "http://www.w3.org/2001/XMLSchema#integer",
+              "@value": "340"
+            }
+          ],
+          "http://www.w3.org/2004/02/skos/core#prefLabel": [
+            {
+              "@value": "Chunked merger"
             }
           ]
         },
@@ -450,6 +561,39 @@
           ]
         },
         {
+          "@id": "http://localhost:8080/resources/pipelines/created-1497634139243/components/b033a4fe-b614-4cbf-9136-6cc3a804745e",
+          "@type": [
+            "http://linkedpipes.com/ontology/Component"
+          ],
+          "http://linkedpipes.com/ontology/configurationGraph": [
+            {
+              "@id": "http://localhost:8080/resources/pipelines/created-1497634139243/components/b033a4fe-b614-4cbf-9136-6cc3a804745e/configuration"
+            }
+          ],
+          "http://linkedpipes.com/ontology/template": [
+            {
+              "@id": "http://etl.linkedpipes.com/resources/components/t-rdfToFile/0.0.0"
+            }
+          ],
+          "http://linkedpipes.com/ontology/x": [
+            {
+              "@type": "http://www.w3.org/2001/XMLSchema#integer",
+              "@value": "280"
+            }
+          ],
+          "http://linkedpipes.com/ontology/y": [
+            {
+              "@type": "http://www.w3.org/2001/XMLSchema#integer",
+              "@value": "240"
+            }
+          ],
+          "http://www.w3.org/2004/02/skos/core#prefLabel": [
+            {
+              "@value": "RDF to file"
+            }
+          ]
+        },
+        {
           "@id": "http://localhost:8080/resources/pipelines/created-1497634139243/components/bac6eb38-16ea-4575-a15e-ba10edfb5063",
           "@type": [
             "http://linkedpipes.com/ontology/Component"
@@ -467,13 +611,13 @@
           "http://linkedpipes.com/ontology/x": [
             {
               "@type": "http://www.w3.org/2001/XMLSchema#integer",
-              "@value": "1040"
+              "@value": "1060"
             }
           ],
           "http://linkedpipes.com/ontology/y": [
             {
               "@type": "http://www.w3.org/2001/XMLSchema#integer",
-              "@value": "300"
+              "@value": "340"
             }
           ],
           "http://www.w3.org/2004/02/skos/core#prefLabel": [
@@ -506,12 +650,50 @@
           "http://linkedpipes.com/ontology/y": [
             {
               "@type": "http://www.w3.org/2001/XMLSchema#integer",
-              "@value": "560"
+              "@value": "640"
             }
           ],
           "http://www.w3.org/2004/02/skos/core#prefLabel": [
             {
               "@value": "SPARQL construct to file list"
+            }
+          ]
+        },
+        {
+          "@id": "http://localhost:8080/resources/pipelines/created-1497634139243/components/d8011469-3a2a-4e7c-a42c-b714f15e7c6d",
+          "@type": [
+            "http://linkedpipes.com/ontology/Component"
+          ],
+          "http://linkedpipes.com/ontology/configurationGraph": [
+            {
+              "@id": "http://localhost:8080/resources/pipelines/created-1497634139243/components/d8011469-3a2a-4e7c-a42c-b714f15e7c6d/configuration"
+            }
+          ],
+          "http://linkedpipes.com/ontology/template": [
+            {
+              "@id": "http://etl.linkedpipes.com/resources/components/t-sparqlUpdateChunked/0.0.0"
+            }
+          ],
+          "http://linkedpipes.com/ontology/x": [
+            {
+              "@type": "http://www.w3.org/2001/XMLSchema#integer",
+              "@value": "680"
+            }
+          ],
+          "http://linkedpipes.com/ontology/y": [
+            {
+              "@type": "http://www.w3.org/2001/XMLSchema#integer",
+              "@value": "240"
+            }
+          ],
+          "http://purl.org/dc/terms/description": [
+            {
+              "@value": "Merge levels"
+            }
+          ],
+          "http://www.w3.org/2004/02/skos/core#prefLabel": [
+            {
+              "@value": "SPARQL update chunked"
             }
           ]
         },
@@ -539,7 +721,7 @@
           "http://linkedpipes.com/ontology/y": [
             {
               "@type": "http://www.w3.org/2001/XMLSchema#integer",
-              "@value": "300"
+              "@value": "340"
             }
           ],
           "http://www.w3.org/2004/02/skos/core#prefLabel": [
@@ -605,7 +787,7 @@
           "http://linkedpipes.com/ontology/y": [
             {
               "@type": "http://www.w3.org/2001/XMLSchema#integer",
-              "@value": "620"
+              "@value": "700"
             }
           ],
           "http://purl.org/dc/terms/description": [
@@ -620,7 +802,7 @@
           ]
         },
         {
-          "@id": "http://localhost:8080/resources/pipelines/created-1497634139243/connection/00daf078-912e-46d7-87d3-a0bf3e7985c6",
+          "@id": "http://localhost:8080/resources/pipelines/created-1497634139243/connection/0006b0bb-9bb3-4503-8f80-ad823ab5c45a",
           "@type": [
             "http://linkedpipes.com/ontology/Connection"
           ],
@@ -631,7 +813,7 @@
           ],
           "http://linkedpipes.com/ontology/sourceComponent": [
             {
-              "@id": "http://localhost:8080/resources/pipelines/created-1497634139243/components/f21a3dd4-e0ea-4890-a7e3-12c6c50711b5"
+              "@id": "http://localhost:8080/resources/pipelines/created-1497634139243/components/9903a35d-143c-40fa-8e47-5662f7cdb841"
             }
           ],
           "http://linkedpipes.com/ontology/targetBinding": [
@@ -641,7 +823,12 @@
           ],
           "http://linkedpipes.com/ontology/targetComponent": [
             {
-              "@id": "http://localhost:8080/resources/pipelines/created-1497634139243/components/096259d4-28cb-437f-972e-69e1ebd04394"
+              "@id": "http://localhost:8080/resources/pipelines/created-1497634139243/components/97ecd62f-bc72-4041-bcaf-9150e8a8599b"
+            }
+          ],
+          "http://linkedpipes.com/ontology/vertex": [
+            {
+              "@id": "http://localhost:8080/resources/pipelines/created-1497634139243/connection/0006b0bb-9bb3-4503-8f80-ad823ab5c45a/vertex/1"
             }
           ]
         },
@@ -672,6 +859,32 @@
           ]
         },
         {
+          "@id": "http://localhost:8080/resources/pipelines/created-1497634139243/connection/07131e62-d216-4c71-9d0a-d8a1527473b6",
+          "@type": [
+            "http://linkedpipes.com/ontology/Connection"
+          ],
+          "http://linkedpipes.com/ontology/sourceBinding": [
+            {
+              "@value": "FilesOutput"
+            }
+          ],
+          "http://linkedpipes.com/ontology/sourceComponent": [
+            {
+              "@id": "http://localhost:8080/resources/pipelines/created-1497634139243/components/70f7005f-b59d-4d5b-b34d-88df120707d6"
+            }
+          ],
+          "http://linkedpipes.com/ontology/targetBinding": [
+            {
+              "@value": "FilesInput"
+            }
+          ],
+          "http://linkedpipes.com/ontology/targetComponent": [
+            {
+              "@id": "http://localhost:8080/resources/pipelines/created-1497634139243/10"
+            }
+          ]
+        },
+        {
           "@id": "http://localhost:8080/resources/pipelines/created-1497634139243/connection/13efa19a-2a2e-4211-a214-5a0ff133efda",
           "@type": [
             "http://linkedpipes.com/ontology/Connection"
@@ -694,6 +907,32 @@
           "http://linkedpipes.com/ontology/targetComponent": [
             {
               "@id": "http://localhost:8080/resources/pipelines/created-1497634139243/components/e2bc7fe7-f4c9-46db-b896-8ac6a0fbf86b"
+            }
+          ]
+        },
+        {
+          "@id": "http://localhost:8080/resources/pipelines/created-1497634139243/connection/1542b1b9-b9b8-4856-b535-71655c1a30f4",
+          "@type": [
+            "http://linkedpipes.com/ontology/Connection"
+          ],
+          "http://linkedpipes.com/ontology/sourceBinding": [
+            {
+              "@value": "OutputRdf"
+            }
+          ],
+          "http://linkedpipes.com/ontology/sourceComponent": [
+            {
+              "@id": "http://localhost:8080/resources/pipelines/created-1497634139243/components/9903a35d-143c-40fa-8e47-5662f7cdb841"
+            }
+          ],
+          "http://linkedpipes.com/ontology/targetBinding": [
+            {
+              "@value": "InputRdf"
+            }
+          ],
+          "http://linkedpipes.com/ontology/targetComponent": [
+            {
+              "@id": "http://localhost:8080/resources/pipelines/created-1497634139243/components/f63dd69d-4038-4a7c-ac0c-11c3536e2085"
             }
           ]
         },
@@ -740,6 +979,63 @@
           ]
         },
         {
+          "@id": "http://localhost:8080/resources/pipelines/created-1497634139243/connection/272b61d1-6125-4222-b23b-d42d6b9a9948",
+          "@type": [
+            "http://linkedpipes.com/ontology/Connection"
+          ],
+          "http://linkedpipes.com/ontology/sourceBinding": [
+            {
+              "@value": "OutputFile"
+            }
+          ],
+          "http://linkedpipes.com/ontology/sourceComponent": [
+            {
+              "@id": "http://localhost:8080/resources/pipelines/created-1497634139243/components/b033a4fe-b614-4cbf-9136-6cc3a804745e"
+            }
+          ],
+          "http://linkedpipes.com/ontology/targetBinding": [
+            {
+              "@value": "InputFiles"
+            }
+          ],
+          "http://linkedpipes.com/ontology/targetComponent": [
+            {
+              "@id": "http://localhost:8080/resources/pipelines/created-1497634139243/components/8fe9b87f-ee12-4ff4-8e42-dcdea847a6ba"
+            }
+          ]
+        },
+        {
+          "@id": "http://localhost:8080/resources/pipelines/created-1497634139243/connection/2becdb99-d70e-44e0-8088-631961398a27",
+          "@type": [
+            "http://linkedpipes.com/ontology/Connection"
+          ],
+          "http://linkedpipes.com/ontology/sourceBinding": [
+            {
+              "@value": "OutputRdf"
+            }
+          ],
+          "http://linkedpipes.com/ontology/sourceComponent": [
+            {
+              "@id": "http://localhost:8080/resources/pipelines/created-1497634139243/components/9903a35d-143c-40fa-8e47-5662f7cdb841"
+            }
+          ],
+          "http://linkedpipes.com/ontology/targetBinding": [
+            {
+              "@value": "InputRdf"
+            }
+          ],
+          "http://linkedpipes.com/ontology/targetComponent": [
+            {
+              "@id": "http://localhost:8080/resources/pipelines/created-1497634139243/components/c7615b82-891e-4580-85c9-58e7f45fbeb3"
+            }
+          ],
+          "http://linkedpipes.com/ontology/vertex": [
+            {
+              "@id": "http://localhost:8080/resources/pipelines/created-1497634139243/connection/2becdb99-d70e-44e0-8088-631961398a27/vertex/1"
+            }
+          ]
+        },
+        {
           "@id": "http://localhost:8080/resources/pipelines/created-1497634139243/connection/4912edd4-9797-43e7-b799-e43a1901b6fb",
           "@type": [
             "http://linkedpipes.com/ontology/Connection"
@@ -770,37 +1066,6 @@
             },
             {
               "@id": "http://localhost:8080/resources/pipelines/created-1497634139243/connection/4912edd4-9797-43e7-b799-e43a1901b6fb/vertex/2"
-            }
-          ]
-        },
-        {
-          "@id": "http://localhost:8080/resources/pipelines/created-1497634139243/connection/5a571ccd-f192-4982-b26d-c5e5e43a13a6",
-          "@type": [
-            "http://linkedpipes.com/ontology/Connection"
-          ],
-          "http://linkedpipes.com/ontology/sourceBinding": [
-            {
-              "@value": "OutputRdf"
-            }
-          ],
-          "http://linkedpipes.com/ontology/sourceComponent": [
-            {
-              "@id": "http://localhost:8080/resources/pipelines/created-1497634139243/components/f21a3dd4-e0ea-4890-a7e3-12c6c50711b5"
-            }
-          ],
-          "http://linkedpipes.com/ontology/targetBinding": [
-            {
-              "@value": "InputRdf"
-            }
-          ],
-          "http://linkedpipes.com/ontology/targetComponent": [
-            {
-              "@id": "http://localhost:8080/resources/pipelines/created-1497634139243/components/c7615b82-891e-4580-85c9-58e7f45fbeb3"
-            }
-          ],
-          "http://linkedpipes.com/ontology/vertex": [
-            {
-              "@id": "http://localhost:8080/resources/pipelines/created-1497634139243/connection/5a571ccd-f192-4982-b26d-c5e5e43a13a6/vertex/1"
             }
           ]
         },
@@ -873,7 +1138,7 @@
           ]
         },
         {
-          "@id": "http://localhost:8080/resources/pipelines/created-1497634139243/connection/9c024c2a-8e40-4da7-915b-c9872f4c3c2e",
+          "@id": "http://localhost:8080/resources/pipelines/created-1497634139243/connection/a3fe3b51-0b01-48b7-ade2-a0f5e1bc9bef",
           "@type": [
             "http://linkedpipes.com/ontology/Connection"
           ],
@@ -884,33 +1149,7 @@
           ],
           "http://linkedpipes.com/ontology/sourceComponent": [
             {
-              "@id": "http://localhost:8080/resources/pipelines/created-1497634139243/components/f21a3dd4-e0ea-4890-a7e3-12c6c50711b5"
-            }
-          ],
-          "http://linkedpipes.com/ontology/targetBinding": [
-            {
-              "@value": "InputRdf"
-            }
-          ],
-          "http://linkedpipes.com/ontology/targetComponent": [
-            {
-              "@id": "http://localhost:8080/resources/pipelines/created-1497634139243/components/4838aec7-325a-4875-a53d-352c69f78a89"
-            }
-          ]
-        },
-        {
-          "@id": "http://localhost:8080/resources/pipelines/created-1497634139243/connection/9e8502e2-6330-409e-888f-04b77c350394",
-          "@type": [
-            "http://linkedpipes.com/ontology/Connection"
-          ],
-          "http://linkedpipes.com/ontology/sourceBinding": [
-            {
-              "@value": "OutputRdf"
-            }
-          ],
-          "http://linkedpipes.com/ontology/sourceComponent": [
-            {
-              "@id": "http://localhost:8080/resources/pipelines/created-1497634139243/components/f21a3dd4-e0ea-4890-a7e3-12c6c50711b5"
+              "@id": "http://localhost:8080/resources/pipelines/created-1497634139243/components/9903a35d-143c-40fa-8e47-5662f7cdb841"
             }
           ],
           "http://linkedpipes.com/ontology/targetBinding": [
@@ -921,6 +1160,40 @@
           "http://linkedpipes.com/ontology/targetComponent": [
             {
               "@id": "http://localhost:8080/resources/pipelines/created-1497634139243/components/68a81f7d-ab14-4dc8-8e63-79fef066cd2f"
+            }
+          ]
+        },
+        {
+          "@id": "http://localhost:8080/resources/pipelines/created-1497634139243/connection/abad249b-2458-47ca-a002-cad3b063bbce",
+          "@type": [
+            "http://linkedpipes.com/ontology/Connection"
+          ],
+          "http://linkedpipes.com/ontology/sourceBinding": [
+            {
+              "@value": "OutputRdf"
+            }
+          ],
+          "http://linkedpipes.com/ontology/sourceComponent": [
+            {
+              "@id": "http://localhost:8080/resources/pipelines/created-1497634139243/components/d8011469-3a2a-4e7c-a42c-b714f15e7c6d"
+            }
+          ],
+          "http://linkedpipes.com/ontology/targetBinding": [
+            {
+              "@value": "InputRdf"
+            }
+          ],
+          "http://linkedpipes.com/ontology/targetComponent": [
+            {
+              "@id": "http://localhost:8080/resources/pipelines/created-1497634139243/components/9903a35d-143c-40fa-8e47-5662f7cdb841"
+            }
+          ],
+          "http://linkedpipes.com/ontology/vertex": [
+            {
+              "@id": "http://localhost:8080/resources/pipelines/created-1497634139243/connection/abad249b-2458-47ca-a002-cad3b063bbce/vertex/1"
+            },
+            {
+              "@id": "http://localhost:8080/resources/pipelines/created-1497634139243/connection/abad249b-2458-47ca-a002-cad3b063bbce/vertex/2"
             }
           ]
         },
@@ -951,7 +1224,7 @@
           ]
         },
         {
-          "@id": "http://localhost:8080/resources/pipelines/created-1497634139243/connection/c01ba3fc-15ae-4238-bebe-fdcbb6d6a66d",
+          "@id": "http://localhost:8080/resources/pipelines/created-1497634139243/connection/cd7d49e5-7917-4fc0-a63f-7debd75aca13",
           "@type": [
             "http://linkedpipes.com/ontology/Connection"
           ],
@@ -962,7 +1235,7 @@
           ],
           "http://linkedpipes.com/ontology/sourceComponent": [
             {
-              "@id": "http://localhost:8080/resources/pipelines/created-1497634139243/components/f21a3dd4-e0ea-4890-a7e3-12c6c50711b5"
+              "@id": "http://localhost:8080/resources/pipelines/created-1497634139243/components/8fe9b87f-ee12-4ff4-8e42-dcdea847a6ba"
             }
           ],
           "http://linkedpipes.com/ontology/targetBinding": [
@@ -972,12 +1245,33 @@
           ],
           "http://linkedpipes.com/ontology/targetComponent": [
             {
-              "@id": "http://localhost:8080/resources/pipelines/created-1497634139243/components/97ecd62f-bc72-4041-bcaf-9150e8a8599b"
+              "@id": "http://localhost:8080/resources/pipelines/created-1497634139243/components/d8011469-3a2a-4e7c-a42c-b714f15e7c6d"
+            }
+          ]
+        },
+        {
+          "@id": "http://localhost:8080/resources/pipelines/created-1497634139243/connection/d0fd8dcb-31df-417d-95cc-7445e43300b9",
+          "@type": [
+            "http://linkedpipes.com/ontology/Connection"
+          ],
+          "http://linkedpipes.com/ontology/sourceBinding": [
+            {
+              "@value": "OutputRdf"
             }
           ],
-          "http://linkedpipes.com/ontology/vertex": [
+          "http://linkedpipes.com/ontology/sourceComponent": [
             {
-              "@id": "http://localhost:8080/resources/pipelines/created-1497634139243/connection/c01ba3fc-15ae-4238-bebe-fdcbb6d6a66d/vertex/1"
+              "@id": "http://localhost:8080/resources/pipelines/created-1497634139243/components/9903a35d-143c-40fa-8e47-5662f7cdb841"
+            }
+          ],
+          "http://linkedpipes.com/ontology/targetBinding": [
+            {
+              "@value": "InputRdf"
+            }
+          ],
+          "http://linkedpipes.com/ontology/targetComponent": [
+            {
+              "@id": "http://localhost:8080/resources/pipelines/created-1497634139243/components/4838aec7-325a-4875-a53d-352c69f78a89"
             }
           ]
         },
@@ -1008,6 +1302,58 @@
           ]
         },
         {
+          "@id": "http://localhost:8080/resources/pipelines/created-1497634139243/connection/de12217e-b36c-41cc-a886-3f4529eea434",
+          "@type": [
+            "http://linkedpipes.com/ontology/Connection"
+          ],
+          "http://linkedpipes.com/ontology/sourceBinding": [
+            {
+              "@value": "OutputRdf"
+            }
+          ],
+          "http://linkedpipes.com/ontology/sourceComponent": [
+            {
+              "@id": "http://localhost:8080/resources/pipelines/created-1497634139243/components/f21a3dd4-e0ea-4890-a7e3-12c6c50711b5"
+            }
+          ],
+          "http://linkedpipes.com/ontology/targetBinding": [
+            {
+              "@value": "InputRdf"
+            }
+          ],
+          "http://linkedpipes.com/ontology/targetComponent": [
+            {
+              "@id": "http://localhost:8080/resources/pipelines/created-1497634139243/components/b033a4fe-b614-4cbf-9136-6cc3a804745e"
+            }
+          ]
+        },
+        {
+          "@id": "http://localhost:8080/resources/pipelines/created-1497634139243/connection/ed73b7b3-2b02-40b8-924b-7d23f9c666b0",
+          "@type": [
+            "http://linkedpipes.com/ontology/Connection"
+          ],
+          "http://linkedpipes.com/ontology/sourceBinding": [
+            {
+              "@value": "OutputRdf"
+            }
+          ],
+          "http://linkedpipes.com/ontology/sourceComponent": [
+            {
+              "@id": "http://localhost:8080/resources/pipelines/created-1497634139243/components/9903a35d-143c-40fa-8e47-5662f7cdb841"
+            }
+          ],
+          "http://linkedpipes.com/ontology/targetBinding": [
+            {
+              "@value": "InputRdf"
+            }
+          ],
+          "http://linkedpipes.com/ontology/targetComponent": [
+            {
+              "@id": "http://localhost:8080/resources/pipelines/created-1497634139243/components/096259d4-28cb-437f-972e-69e1ebd04394"
+            }
+          ]
+        },
+        {
           "@id": "http://localhost:8080/resources/pipelines/created-1497634139243/connection/f0fd2f95-bc56-46cc-be1e-e9a4620dcc92",
           "@type": [
             "http://linkedpipes.com/ontology/Connection"
@@ -1034,30 +1380,18 @@
           ]
         },
         {
-          "@id": "http://localhost:8080/resources/pipelines/created-1497634139243/connection/f685d0d3-b310-41a7-b97f-c5abcf122b0f",
-          "@type": [
-            "http://linkedpipes.com/ontology/Connection"
-          ],
-          "http://linkedpipes.com/ontology/sourceBinding": [
-            {
-              "@value": "OutputRdf"
-            }
-          ],
-          "http://linkedpipes.com/ontology/sourceComponent": [
-            {
-              "@id": "http://localhost:8080/resources/pipelines/created-1497634139243/components/f21a3dd4-e0ea-4890-a7e3-12c6c50711b5"
-            }
-          ],
-          "http://linkedpipes.com/ontology/targetBinding": [
-            {
-              "@value": "InputRdf"
-            }
-          ],
-          "http://linkedpipes.com/ontology/targetComponent": [
-            {
-              "@id": "http://localhost:8080/resources/pipelines/created-1497634139243/components/f63dd69d-4038-4a7c-ac0c-11c3536e2085"
-            }
-          ]
+          "@id": "http://localhost:8080/resources/pipelines/created-1497634139243/connection/0006b0bb-9bb3-4503-8f80-ad823ab5c45a/vertex/1",
+          "@type": "http://linkedpipes.com/ontology/Vertex",
+          "http://linkedpipes.com/ontology/x": 320,
+          "http://linkedpipes.com/ontology/y": 480,
+          "http://linkedpipes.com/ontology/order": 1
+        },
+        {
+          "@id": "http://localhost:8080/resources/pipelines/created-1497634139243/connection/2becdb99-d70e-44e0-8088-631961398a27/vertex/1",
+          "@type": "http://linkedpipes.com/ontology/Vertex",
+          "http://linkedpipes.com/ontology/x": 320,
+          "http://linkedpipes.com/ontology/y": 660,
+          "http://linkedpipes.com/ontology/order": 1
         },
         {
           "@id": "http://localhost:8080/resources/pipelines/created-1497634139243/connection/4912edd4-9797-43e7-b799-e43a1901b6fb/vertex/1",
@@ -1074,18 +1408,18 @@
           "http://linkedpipes.com/ontology/order": 2
         },
         {
-          "@id": "http://localhost:8080/resources/pipelines/created-1497634139243/connection/5a571ccd-f192-4982-b26d-c5e5e43a13a6/vertex/1",
+          "@id": "http://localhost:8080/resources/pipelines/created-1497634139243/connection/abad249b-2458-47ca-a002-cad3b063bbce/vertex/1",
           "@type": "http://linkedpipes.com/ontology/Vertex",
-          "http://linkedpipes.com/ontology/x": 320,
-          "http://linkedpipes.com/ontology/y": 600,
+          "http://linkedpipes.com/ontology/x": 900,
+          "http://linkedpipes.com/ontology/y": 320,
           "http://linkedpipes.com/ontology/order": 1
         },
         {
-          "@id": "http://localhost:8080/resources/pipelines/created-1497634139243/connection/c01ba3fc-15ae-4238-bebe-fdcbb6d6a66d/vertex/1",
+          "@id": "http://localhost:8080/resources/pipelines/created-1497634139243/connection/abad249b-2458-47ca-a002-cad3b063bbce/vertex/2",
           "@type": "http://linkedpipes.com/ontology/Vertex",
-          "http://linkedpipes.com/ontology/x": 320,
-          "http://linkedpipes.com/ontology/y": 460,
-          "http://linkedpipes.com/ontology/order": 1
+          "http://linkedpipes.com/ontology/x": 60,
+          "http://linkedpipes.com/ontology/y": 320,
+          "http://linkedpipes.com/ontology/order": 2
         }
       ],
       "@id": "http://localhost:8080/resources/pipelines/created-1497634139243"
@@ -1227,7 +1561,7 @@
           ],
           "http://plugins.linkedpipes.com/ontology/t-xslt#template": [
             {
-              "@value": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE xsl:stylesheet [\n    <!ENTITY dataset-type  \"http://publications.europa.eu/resource/authority/dataset-type/\">\n    <!ENTITY skos          \"http://www.w3.org/2004/02/skos/core#\">\n    <!ENTITY xsd           \"http://www.w3.org/2001/XMLSchema#\">\n]>\n<xsl:stylesheet\n    xmlns:dbo=\"http://dbpedia.org/ontology/\"\n    xmlns:dcterms=\"http://purl.org/dc/terms/\"\n    xmlns:f=\"http://opendata.cz/xslt/functions#\"\n    xmlns:lang=\"http://id.loc.gov/vocabulary/iso639-1/\"\n    xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\"\n    xmlns:rdfs=\"http://www.w3.org/2000/01/rdf-schema#\"\n    xmlns:schema=\"http://schema.org/\"\n    xmlns:skos=\"http://www.w3.org/2004/02/skos/core#\"\n    xmlns:xsl=\"http://www.w3.org/1999/XSL/Transform\"\n    xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"\n    xmlns:void=\"http://rdfs.org/ns/void#\"\n    exclude-result-prefixes=\"f\"\n    version=\"2.0\">\n    \n    <!-- Global parameters -->\n    \n    <xsl:param name=\"ns\">https://csu.opendata.cz/zdroj/</xsl:param>\n    \n    <!-- Functions -->\n    \n    <!-- Extract code list level from its identifier. -->\n    <xsl:function name=\"f:extract-level\" as=\"xsd:integer\">\n        <xsl:param name=\"identifier\" as=\"xsd:string\"/>\n        <xsl:choose>\n            <xsl:when test=\"contains($identifier, 'NUTS')\">\n                <xsl:value-of select=\"xsd:integer(replace($identifier, '^NUTS(\\d+).*$', '$1'))\"/>\n            </xsl:when>\n            <xsl:otherwise>\n                <xsl:value-of select=\"xsd:integer(replace($identifier, '^.+(\\d+)$', '$1'))\"/>\n            </xsl:otherwise>\n        </xsl:choose>\n    </xsl:function>\n    \n    <!-- Guess if acronym indicates a code list level, i.e. ends with a number. -->\n    <xsl:function name=\"f:is-level\" as=\"xsd:boolean\">\n        <xsl:param name=\"acronym\" as=\"xsd:string\"/>\n        <xsl:value-of select=\"matches($acronym, '^.+\\d+$')\"/>\n    </xsl:function>\n    \n    <!-- Test if parent acronym indicates a parent level of the child acronym. --> \n    <xsl:function name=\"f:is-parent-level\" as=\"xsd:boolean\">\n        <xsl:param name=\"parent-acronym\" as=\"xsd:string\"/>\n        <xsl:param name=\"child-acronym\" as=\"xsd:string\"/>\n        <xsl:value-of select=\"f:is-level($parent-acronym)\n                              and\n                              f:is-level($child-acronym)\n                              and\n                              (f:trim-level($parent-acronym) = f:trim-level($child-acronym))\n                              and\n                              (f:extract-level($parent-acronym) + 1 = f:extract-level($child-acronym))\"/>\n     </xsl:function>\n    \n    <!-- Converts camelCase $text into kebab-case. -->\n    <xsl:function name=\"f:kebab-case\" as=\"xsd:string\">\n        <xsl:param name=\"text\" as=\"xsd:string\"/>\n        <xsl:value-of select=\"f:slugify(replace($text, '(\\p{Ll})(\\p{Lu})', '$1-$2'))\"/>\n    </xsl:function>\n    \n    <!-- Removes whitespace -->\n    <xsl:function name=\"f:removeWhitespace\" as=\"xsd:string\">\n        <xsl:param name=\"text\" as=\"xsd:string\"/>\n        <xsl:value-of select=\"replace($text, '\\s', '')\"/>\n    </xsl:function>\n    \n    <!-- Converts $text into URI-safe slug. -->\n    <xsl:function name=\"f:slugify\" as=\"xsd:anyURI\">\n        <xsl:param name=\"text\" as=\"xsd:string\"/>\n        <xsl:value-of select=\"encode-for-uri(translate(replace(lower-case(normalize-unicode($text, 'NFKD')), '\\P{IsBasicLatin}', ''), ' ', '-'))\" />\n    </xsl:function>\n    \n    <!-- Trims leading and trailing whitespace -->\n    <xsl:function name=\"f:trim\" as=\"xsd:string\">\n        <xsl:param name=\"text\" as=\"xsd:string\"/>\n        <xsl:value-of select=\"replace($text, '^\\s+|\\s+$', '')\"/>\n    </xsl:function>\n    \n    <!-- Trim code list level from its identifier. -->\n    <xsl:function name=\"f:trim-level\" as=\"xsd:string\">\n        <xsl:param name=\"identifier\" as=\"xsd:string\"/>\n        <xsl:choose>\n            <xsl:when test=\"contains($identifier, 'NUTS')\">\n                <xsl:value-of select=\"replace($identifier, 'NUTS\\d+', 'NUTS')\"/>\n            </xsl:when>\n            <xsl:otherwise>\n                <xsl:value-of select=\"replace($identifier, '\\d+$', '')\"/>\n            </xsl:otherwise>\n        </xsl:choose>\n    </xsl:function>\n    \n    <!-- Output -->\n    \n    <xsl:output encoding=\"UTF-8\" indent=\"yes\" method=\"xml\" normalization-form=\"NFC\" />\n    <xsl:strip-space elements=\"*\"/>\n    \n    <!-- Templates -->\n    \n    <xsl:template match=\"/\">\n        <xsl:variable name=\"code\">\n            <xsl:choose>\n                <xsl:when test=\"EXPORT/INFO/OBSAH/CISELNIK\">\n                    <xsl:value-of select=\"EXPORT/INFO/OBSAH/CISELNIK/KODCIS\"/>\n                </xsl:when>\n                <xsl:when test=\"EXPORT/INFO/OBSAH/VAZBA\">\n                    <xsl:value-of select=\"string-join(EXPORT/INFO/OBSAH/VAZBA/KODCIS, '-')\"/>\n                </xsl:when>\n            </xsl:choose>\n        </xsl:variable>\n        \n        <xsl:variable name=\"lang\" select=\"lower-case(EXPORT/INFO/KODJAZ/text())\"/>\n        <xsl:variable name=\"type-code\" select=\"EXPORT/INFO/TYPEXP/@kod\"/>\n        \n        <rdf:RDF>\n            <xsl:apply-templates select=\"EXPORT[$type-code = '1']\" mode=\"code-list\">\n                <xsl:with-param name=\"dataset\" select=\"concat($ns, 'řízený-slovník/', $code)\" tunnel=\"yes\"/>\n                <xsl:with-param name=\"resource-ns\" select=\"concat($ns, 'řízený-slovník/', $code, '/')\" tunnel=\"yes\"/>\n                <xsl:with-param name=\"lang\" select=\"$lang\" tunnel=\"yes\"/>\n            </xsl:apply-templates>\n            <xsl:apply-templates select=\"EXPORT[$type-code = '3']\" mode=\"mapping\">\n                <xsl:with-param name=\"dataset\" select=\"concat($ns, 'mapování/', $code)\" tunnel=\"yes\"/>\n            </xsl:apply-templates>\n        </rdf:RDF>\n    </xsl:template>\n    \n    <!-- Code list templates -->\n    \n    <xsl:template match=\"EXPORT\" mode=\"code-list\">\n        <xsl:param name=\"dataset\" tunnel=\"yes\"/>\n        <xsl:param name=\"lang\" tunnel=\"yes\"/>\n        \n        <skos:ConceptScheme rdf:about=\"{$dataset}\">\n            <dcterms:type rdf:resource=\"&dataset-type;CODE_LIST\"/>\n            <dcterms:language rdf:resource=\"http://id.loc.gov/vocabulary/iso639-1/{$lang}\"/>\n            <xsl:apply-templates select=\"INFO/OBSAH/CISELNIK\" mode=\"code-list\"/>\n        </skos:ConceptScheme>\n        <xsl:apply-templates select=\"DATA\" mode=\"code-list\"/>\n    </xsl:template>\n    \n    <xsl:template match=\"AKRCIS\" mode=\"code-list\">\n        <!-- Akronym číselníku -->\n        <dbo:abbreviation><xsl:value-of select=\"text()\"/></dbo:abbreviation>\n    </xsl:template>\n    \n    <xsl:template match=\"KODCIS\" mode=\"code-list\">\n        <!-- Kód číselníku -->\n        <dcterms:identifier><xsl:value-of select=\"text()\"/></dcterms:identifier>\n    </xsl:template>\n    \n    <xsl:template match=\"NAZEV\" mode=\"code-list\">\n        <!-- Plný název číselníku -->\n        <xsl:param name=\"lang\" tunnel=\"yes\"/>\n        <rdfs:label xml:lang=\"{$lang}\"><xsl:value-of select=\"text()\"/></rdfs:label>\n    </xsl:template>\n    \n    <xsl:template match=\"DATA/POLOZKA\" mode=\"code-list\">\n        <xsl:param name=\"dataset\" tunnel=\"yes\"/>\n        <xsl:param name=\"resource-ns\" tunnel=\"yes\"/>\n        <xsl:variable name=\"concept\" select=\"concat($resource-ns, 'pojem/', CHODNOTA/text())\"/>\n        <skos:Concept rdf:about=\"{$concept}\">\n            <skos:inScheme rdf:resource=\"{$dataset}\"/>\n            <xsl:apply-templates mode=\"code-list\"/>\n            <dcterms:valid>\n                <xsl:variable name=\"validity-key\" select=\"concat(ADMPLOD/text(), '-', if (ADMNEPO/text() != '9999-09-09') then ADMNEPO/text() else '')\"/>\n                <schema:Event rdf:about=\"{concat($ns, 'událost/', $validity-key)}\">\n                    <xsl:apply-templates mode=\"validity\"/>\n                </schema:Event>\n            </dcterms:valid>\n        </skos:Concept>\n        <xsl:apply-templates select=\"ATRIBUTY\" mode=\"attributes\">\n            <xsl:with-param name=\"concept\" select=\"$concept\" tunnel=\"yes\"/>\n        </xsl:apply-templates>\n    </xsl:template>\n    \n    <xsl:template match=\"ADMPLOD\" mode=\"validity\">\n        <!-- Počátek platnosti položky -->\n        <schema:startDate rdf:datatype=\"&xsd;date\"><xsl:value-of select=\"text()\"/></schema:startDate>\n    </xsl:template>\n    \n    <xsl:template match=\"ADMNEPO[text() != '9999-09-09']\" mode=\"validity\">\n        <!-- Konec platnosti položky -->\n        <schema:endDate rdf:datatype=\"&xsd;date\"><xsl:value-of select=\"text()\"/></schema:endDate>\n    </xsl:template>\n    \n    <xsl:template match=\"ATRIBUTY\" mode=\"attributes\">\n        <!-- Atribut položky číselníku -->\n        <xsl:apply-templates mode=\"attributes\"/>\n    </xsl:template>\n    \n    <xsl:template match=\"ATR[not(normalize-space() = '')]\" mode=\"attributes\">\n        <!-- Hodnota atributu -->\n        <!-- FIXME: Abusing RDF reification vocabulary to represent arbitrary attribute-value pairs. -->\n        <xsl:param name=\"concept\" tunnel=\"yes\"/>\n        <rdf:Statement>\n            <rdf:subject rdf:resource=\"{$concept}\"/>\n            <rdf:predicate><xsl:value-of select=\"@akronym\"/></rdf:predicate>\n            <rdf:object><xsl:value-of select=\"text()\"/></rdf:object>\n        </rdf:Statement>\n    </xsl:template>\n    \n    <xsl:template match=\"CHODNOTA\" mode=\"code-list\">\n        <!-- Kód položky číselníku (znakový) -->\n        <skos:notation><xsl:value-of select=\"text()\"/></skos:notation>\n    </xsl:template>\n    \n    <xsl:template match=\"DEFINICE[not(normalize-space() = '')]\" mode=\"code-list\">\n        <!-- Definice obsahu -->\n        <skos:definition><xsl:value-of select=\"text()\"/></skos:definition>\n    </xsl:template>\n    \n    <xsl:template match=\"TEXT\" mode=\"code-list\">\n        <!-- Plný text položky číselníku -->\n        <xsl:param name=\"lang\" tunnel=\"yes\"/>\n        <skos:prefLabel xml:lang=\"{$lang}\"><xsl:value-of select=\"text()\"/></skos:prefLabel>\n    </xsl:template>\n    \n    <xsl:template match=\"ZKRTEXT[text() != TEXT/text()]\" mode=\"code-list\">\n        <!-- Zkrácený text položky číselníku -->\n        <xsl:param name=\"lang\" tunnel=\"yes\"/>\n        <skos:altLabel xml:lang=\"{$lang}\"><xsl:value-of select=\"text()\"/></skos:altLabel>\n    </xsl:template>\n    \n    <!-- Mapping templates -->\n    \n    <xsl:template match=\"EXPORT\" mode=\"mapping\">\n        <xsl:param name=\"dataset\" tunnel=\"yes\"/>\n        <xsl:variable name=\"source-code\" select=\"INFO/OBSAH/VAZBA[@ref = '1']/KODCIS/text()\"/>\n        <xsl:variable name=\"target-code\" select=\"INFO/OBSAH/VAZBA[@ref = '2']/KODCIS/text()\"/>\n        <xsl:variable name=\"source-abbreviation\" select=\"INFO/OBSAH/VAZBA[@ref = '1']/AKRCIS/text()\"/>\n        <xsl:variable name=\"target-abbreviation\" select=\"INFO/OBSAH/VAZBA[@ref = '2']/AKRCIS/text()\"/>\n        \n        <xsl:variable name=\"link-predicate\">\n            <xsl:choose>\n                <xsl:when test=\"f:is-parent-level($source-abbreviation, $target-abbreviation)\">skos:narrowMatch</xsl:when>\n                <xsl:otherwise>skos:relatedMatch</xsl:otherwise>\n            </xsl:choose>\n        </xsl:variable>\n        \n        <void:Linkset rdf:about=\"{$dataset}\">\n            <dcterms:type rdf:resource=\"&dataset-type;MAPPING\"/>\n            <dcterms:identifier><xsl:value-of select=\"concat($source-code, '-', $target-code)\"/></dcterms:identifier>\n            <void:subjectsTarget rdf:resource=\"{concat($ns, 'řízený-slovník/', $source-code)}\"/>\n            <void:objectsTarget rdf:resource=\"{concat($ns, 'řízený-slovník/', $target-code)}\"/>\n            <void:linkPredicate rdf:resource=\"{replace($link-predicate, 'skos:', '&skos;')}\"/>\n        </void:Linkset>\n        <xsl:apply-templates select=\"DATA\" mode=\"mapping\">\n            <xsl:with-param name=\"source-ns\" select=\"concat($ns, $source-code, '/pojem/')\"/>\n            <xsl:with-param name=\"target-ns\" select=\"concat($ns, $target-code, '/pojem/')\"/>\n            <xsl:with-param name=\"link-predicate\" select=\"$link-predicate\"/>\n        </xsl:apply-templates>\n    </xsl:template>\n    \n    <xsl:template match=\"POLOZKA\" mode=\"mapping\">\n        <xsl:param name=\"source-ns\"/>\n        <xsl:param name=\"target-ns\"/>\n        <xsl:param name=\"link-predicate\"/>\n        <rdf:Description rdf:about=\"{concat($source-ns, POLVAZ[@ref = '1']/CHODNOTA/text())}\">\n            <xsl:element name=\"{$link-predicate}\">\n                <xsl:attribute name=\"rdf:resource\" select=\"concat($target-ns, POLVAZ[@ref = '2']/CHODNOTA/text())\"/>\n            </xsl:element>\n        </rdf:Description>\n    </xsl:template>\n    \n    <!-- Catch-all empty template -->\n    <xsl:template match=\"text()|@*\" mode=\"#all\"/>\n</xsl:stylesheet>"
+              "@value": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE xsl:stylesheet [\n    <!ENTITY dataset-type  \"http://publications.europa.eu/resource/authority/dataset-type/\">\n    <!ENTITY skos          \"http://www.w3.org/2004/02/skos/core#\">\n    <!ENTITY xsd           \"http://www.w3.org/2001/XMLSchema#\">\n]>\n<xsl:stylesheet\n    xmlns:dbo=\"http://dbpedia.org/ontology/\"\n    xmlns:dcterms=\"http://purl.org/dc/terms/\"\n    xmlns:f=\"http://opendata.cz/xslt/functions#\"\n    xmlns:lang=\"http://id.loc.gov/vocabulary/iso639-1/\"\n    xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\"\n    xmlns:rdfs=\"http://www.w3.org/2000/01/rdf-schema#\"\n    xmlns:schema=\"http://schema.org/\"\n    xmlns:skos=\"http://www.w3.org/2004/02/skos/core#\"\n    xmlns:xsl=\"http://www.w3.org/1999/XSL/Transform\"\n    xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"\n    xmlns:void=\"http://rdfs.org/ns/void#\"\n    exclude-result-prefixes=\"f\"\n    version=\"2.0\">\n    \n    <!-- Global parameters -->\n    \n    <xsl:param name=\"ns\">https://csu.opendata.cz/zdroj/</xsl:param>\n    \n    <!-- Functions -->\n    \n    <!-- Extract code list level from its identifier. -->\n    <xsl:function name=\"f:extract-level\" as=\"xsd:integer\">\n        <xsl:param name=\"identifier\" as=\"xsd:string\"/>\n        <xsl:choose>\n            <xsl:when test=\"contains($identifier, 'NUTS')\">\n                <xsl:value-of select=\"xsd:integer(replace($identifier, '^NUTS(\\d+).*$', '$1'))\"/>\n            </xsl:when>\n            <xsl:otherwise>\n                <xsl:value-of select=\"xsd:integer(replace($identifier, '^.+(\\d+)$', '$1'))\"/>\n            </xsl:otherwise>\n        </xsl:choose>\n    </xsl:function>\n    \n    <!-- Guess if acronym indicates a code list level, i.e. ends with a number. -->\n    <xsl:function name=\"f:is-level\" as=\"xsd:boolean\">\n        <xsl:param name=\"acronym\" as=\"xsd:string\"/>\n        <xsl:value-of select=\"matches($acronym, '^.+\\d+$')\"/>\n    </xsl:function>\n    \n    <!-- Test if parent acronym indicates a parent level of the child acronym. --> \n    <xsl:function name=\"f:is-parent-level\" as=\"xsd:boolean\">\n        <xsl:param name=\"parent-acronym\" as=\"xsd:string\"/>\n        <xsl:param name=\"child-acronym\" as=\"xsd:string\"/>\n        <xsl:value-of select=\"f:is-level($parent-acronym)\n                              and\n                              f:is-level($child-acronym)\n                              and\n                              (f:trim-level($parent-acronym) = f:trim-level($child-acronym))\n                              and\n                              (f:extract-level($parent-acronym) + 1 = f:extract-level($child-acronym))\"/>\n     </xsl:function>\n    \n    <!-- Converts camelCase $text into kebab-case. -->\n    <xsl:function name=\"f:kebab-case\" as=\"xsd:string\">\n        <xsl:param name=\"text\" as=\"xsd:string\"/>\n        <xsl:value-of select=\"f:slugify(replace($text, '(\\p{Ll})(\\p{Lu})', '$1-$2'))\"/>\n    </xsl:function>\n    \n    <!-- Removes whitespace -->\n    <xsl:function name=\"f:removeWhitespace\" as=\"xsd:string\">\n        <xsl:param name=\"text\" as=\"xsd:string\"/>\n        <xsl:value-of select=\"replace($text, '\\s', '')\"/>\n    </xsl:function>\n    \n    <!-- Converts $text into URI-safe slug. -->\n    <xsl:function name=\"f:slugify\" as=\"xsd:anyURI\">\n        <xsl:param name=\"text\" as=\"xsd:string\"/>\n        <xsl:value-of select=\"encode-for-uri(translate(replace(lower-case(normalize-unicode($text, 'NFKD')), '\\P{IsBasicLatin}', ''), ' ', '-'))\" />\n    </xsl:function>\n    \n    <!-- Trims leading and trailing whitespace -->\n    <xsl:function name=\"f:trim\" as=\"xsd:string\">\n        <xsl:param name=\"text\" as=\"xsd:string\"/>\n        <xsl:value-of select=\"replace($text, '^\\s+|\\s+$', '')\"/>\n    </xsl:function>\n    \n    <!-- Trim code list level from its identifier. -->\n    <xsl:function name=\"f:trim-level\" as=\"xsd:string\">\n        <xsl:param name=\"identifier\" as=\"xsd:string\"/>\n        <xsl:choose>\n            <xsl:when test=\"contains($identifier, 'NUTS')\">\n                <xsl:value-of select=\"replace($identifier, 'NUTS\\d+', 'NUTS')\"/>\n            </xsl:when>\n            <xsl:otherwise>\n                <xsl:value-of select=\"replace($identifier, '\\d+$', '')\"/>\n            </xsl:otherwise>\n        </xsl:choose>\n    </xsl:function>\n    \n    <!-- Output -->\n    \n    <xsl:output encoding=\"UTF-8\" indent=\"yes\" method=\"xml\" normalization-form=\"NFC\" />\n    <xsl:strip-space elements=\"*\"/>\n    \n    <!-- Templates -->\n    \n    <xsl:template match=\"/\">\n        <xsl:variable name=\"code\">\n            <xsl:choose>\n                <xsl:when test=\"EXPORT/INFO/OBSAH/CISELNIK\">\n                    <xsl:value-of select=\"EXPORT/INFO/OBSAH/CISELNIK/KODCIS\"/>\n                </xsl:when>\n                <xsl:when test=\"EXPORT/INFO/OBSAH/VAZBA\">\n                    <xsl:value-of select=\"string-join(EXPORT/INFO/OBSAH/VAZBA/KODCIS, '-')\"/>\n                </xsl:when>\n            </xsl:choose>\n        </xsl:variable>\n        \n        <xsl:variable name=\"lang\" select=\"lower-case(EXPORT/INFO/KODJAZ/text())\"/>\n        <xsl:variable name=\"type-code\" select=\"EXPORT/INFO/TYPEXP/@kod\"/>\n        \n        <rdf:RDF>\n            <xsl:apply-templates select=\"EXPORT[$type-code = '1']\" mode=\"code-list\">\n                <xsl:with-param name=\"dataset\" select=\"concat($ns, 'řízený-slovník/', $code)\" tunnel=\"yes\"/>\n                <xsl:with-param name=\"resource-ns\"\n                  select=\"concat($ns, 'řízený-slovník/', $code, '/')\"\n                  tunnel=\"yes\"/>\n                <xsl:with-param name=\"lang\" select=\"$lang\" tunnel=\"yes\"/>\n            </xsl:apply-templates>\n            <xsl:apply-templates select=\"EXPORT[$type-code = '3']\" mode=\"mapping\">\n                <xsl:with-param name=\"dataset\" select=\"concat($ns, 'mapování/', $code)\" tunnel=\"yes\"/>\n            </xsl:apply-templates>\n        </rdf:RDF>\n    </xsl:template>\n    \n    <!-- Code list templates -->\n    \n    <xsl:template match=\"EXPORT\" mode=\"code-list\">\n        <xsl:param name=\"dataset\" tunnel=\"yes\"/>\n        <xsl:param name=\"lang\" tunnel=\"yes\"/>\n        \n        <skos:ConceptScheme rdf:about=\"{$dataset}\">\n            <dcterms:type rdf:resource=\"&dataset-type;CODE_LIST\"/>\n            <dcterms:language rdf:resource=\"http://id.loc.gov/vocabulary/iso639-1/{$lang}\"/>\n            <xsl:apply-templates select=\"INFO/OBSAH/CISELNIK\" mode=\"code-list\"/>\n        </skos:ConceptScheme>\n        <xsl:apply-templates select=\"DATA\" mode=\"code-list\"/>\n    </xsl:template>\n    \n    <xsl:template match=\"AKRCIS\" mode=\"code-list\">\n        <!-- Akronym číselníku -->\n        <dbo:abbreviation><xsl:value-of select=\"text()\"/></dbo:abbreviation>\n    </xsl:template>\n    \n    <xsl:template match=\"KODCIS\" mode=\"code-list\">\n        <!-- Kód číselníku -->\n        <dcterms:identifier><xsl:value-of select=\"text()\"/></dcterms:identifier>\n    </xsl:template>\n    \n    <xsl:template match=\"NAZEV\" mode=\"code-list\">\n        <!-- Plný název číselníku -->\n        <xsl:param name=\"lang\" tunnel=\"yes\"/>\n        <rdfs:label xml:lang=\"{$lang}\"><xsl:value-of select=\"text()\"/></rdfs:label>\n    </xsl:template>\n    \n    <xsl:template match=\"DATA/POLOZKA\" mode=\"code-list\">\n        <xsl:param name=\"dataset\" tunnel=\"yes\"/>\n        <xsl:param name=\"resource-ns\" tunnel=\"yes\"/>\n        <xsl:variable name=\"concept\" select=\"concat($resource-ns, 'pojem/', CHODNOTA/text())\"/>\n        <skos:Concept rdf:about=\"{$concept}\">\n            <skos:inScheme rdf:resource=\"{$dataset}\"/>\n            <xsl:apply-templates mode=\"code-list\"/>\n            <dcterms:valid>\n              <xsl:variable name=\"validity-key\"\n                select=\"concat(ADMPLOD/text(), '-',\n                               if (ADMNEPO/text() != '9999-09-09') then ADMNEPO/text() else '')\"/>\n                <schema:Event rdf:about=\"{concat($ns, 'událost/', $validity-key)}\">\n                    <xsl:apply-templates mode=\"validity\"/>\n                </schema:Event>\n            </dcterms:valid>\n        </skos:Concept>\n        <xsl:apply-templates select=\"ATRIBUTY\" mode=\"attributes\">\n            <xsl:with-param name=\"concept\" select=\"$concept\" tunnel=\"yes\"/>\n        </xsl:apply-templates>\n    </xsl:template>\n    \n    <xsl:template match=\"ADMPLOD\" mode=\"validity\">\n        <!-- Počátek platnosti položky -->\n        <schema:startDate rdf:datatype=\"&xsd;date\"><xsl:value-of select=\"text()\"/></schema:startDate>\n    </xsl:template>\n    \n    <xsl:template match=\"ADMNEPO[text() != '9999-09-09']\" mode=\"validity\">\n        <!-- Konec platnosti položky -->\n        <schema:endDate rdf:datatype=\"&xsd;date\"><xsl:value-of select=\"text()\"/></schema:endDate>\n    </xsl:template>\n    \n    <xsl:template match=\"ATRIBUTY\" mode=\"attributes\">\n        <!-- Atribut položky číselníku -->\n        <xsl:apply-templates mode=\"attributes\"/>\n    </xsl:template>\n    \n    <xsl:template match=\"ATR[not(normalize-space() = '')]\" mode=\"attributes\">\n        <!-- Hodnota atributu -->\n        <!-- FIXME: Abusing RDF reification vocabulary to represent arbitrary attribute-value pairs. -->\n        <xsl:param name=\"concept\" tunnel=\"yes\"/>\n        <rdf:Statement>\n            <rdf:subject rdf:resource=\"{$concept}\"/>\n            <rdf:predicate><xsl:value-of select=\"@akronym\"/></rdf:predicate>\n            <rdf:object><xsl:value-of select=\"text()\"/></rdf:object>\n        </rdf:Statement>\n    </xsl:template>\n    \n    <xsl:template match=\"CHODNOTA\" mode=\"code-list\">\n        <!-- Kód položky číselníku (znakový) -->\n        <skos:notation><xsl:value-of select=\"text()\"/></skos:notation>\n    </xsl:template>\n    \n    <xsl:template match=\"DEFINICE[not(normalize-space() = '')]\" mode=\"code-list\">\n        <!-- Definice obsahu -->\n        <skos:definition><xsl:value-of select=\"text()\"/></skos:definition>\n    </xsl:template>\n    \n    <xsl:template match=\"TEXT\" mode=\"code-list\">\n        <!-- Plný text položky číselníku -->\n        <xsl:param name=\"lang\" tunnel=\"yes\"/>\n        <skos:prefLabel xml:lang=\"{$lang}\"><xsl:value-of select=\"text()\"/></skos:prefLabel>\n    </xsl:template>\n    \n    <xsl:template match=\"ZKRTEXT[text() != TEXT/text()]\" mode=\"code-list\">\n        <!-- Zkrácený text položky číselníku -->\n        <xsl:param name=\"lang\" tunnel=\"yes\"/>\n        <skos:altLabel xml:lang=\"{$lang}\"><xsl:value-of select=\"text()\"/></skos:altLabel>\n    </xsl:template>\n    \n    <!-- Mapping templates -->\n    \n    <xsl:template match=\"EXPORT\" mode=\"mapping\">\n        <xsl:param name=\"dataset\" tunnel=\"yes\"/>\n        <xsl:variable name=\"source-code\" select=\"INFO/OBSAH/VAZBA[@ref = '1']/KODCIS/text()\"/>\n        <xsl:variable name=\"target-code\" select=\"INFO/OBSAH/VAZBA[@ref = '2']/KODCIS/text()\"/>\n        <xsl:variable name=\"source-abbreviation\" select=\"INFO/OBSAH/VAZBA[@ref = '1']/AKRCIS/text()\"/>\n        <xsl:variable name=\"target-abbreviation\" select=\"INFO/OBSAH/VAZBA[@ref = '2']/AKRCIS/text()\"/>\n        \n        <xsl:variable name=\"link-predicate\">\n            <xsl:choose>\n                <xsl:when test=\"f:is-parent-level($source-abbreviation, $target-abbreviation)\">skos:narrowMatch</xsl:when>\n                <xsl:otherwise>skos:relatedMatch</xsl:otherwise>\n            </xsl:choose>\n        </xsl:variable>\n        \n        <void:Linkset rdf:about=\"{$dataset}\">\n            <dcterms:type rdf:resource=\"&dataset-type;MAPPING\"/>\n            <dcterms:identifier>\n              <xsl:value-of select=\"concat($source-code, '-', $target-code)\"/>\n            </dcterms:identifier>\n            <void:subjectsTarget rdf:resource=\"{concat($ns, 'řízený-slovník/', $source-code)}\"/>\n            <void:objectsTarget rdf:resource=\"{concat($ns, 'řízený-slovník/', $target-code)}\"/>\n            <void:linkPredicate rdf:resource=\"{replace($link-predicate, 'skos:', '&skos;')}\"/>\n        </void:Linkset>\n        <xsl:apply-templates select=\"DATA\" mode=\"mapping\">\n            <xsl:with-param name=\"source-ns\" select=\"concat($ns, 'řízený-slovník/', $source-code, '/pojem/')\"/>\n            <xsl:with-param name=\"target-ns\" select=\"concat($ns, 'řízený-slovník/', $target-code, '/pojem/')\"/>\n            <xsl:with-param name=\"link-predicate\" select=\"$link-predicate\"/>\n        </xsl:apply-templates>\n    </xsl:template>\n    \n    <xsl:template match=\"POLOZKA\" mode=\"mapping\">\n        <xsl:param name=\"source-ns\"/>\n        <xsl:param name=\"target-ns\"/>\n        <xsl:param name=\"link-predicate\"/>\n        <rdf:Description rdf:about=\"{concat($source-ns, POLVAZ[@ref = '1']/CHODNOTA/text())}\">\n            <xsl:element name=\"{$link-predicate}\">\n              <xsl:attribute name=\"rdf:resource\"\n                select=\"concat($target-ns, POLVAZ[@ref = '2']/CHODNOTA/text())\"/>\n            </xsl:element>\n        </rdf:Description>\n    </xsl:template>\n    \n    <!-- Catch-all empty template -->\n    <xsl:template match=\"text()|@*\" mode=\"#all\"/>\n</xsl:stylesheet>"
             }
           ],
           "http://plugins.linkedpipes.com/ontology/t-xslt#templateControl": [
@@ -1259,7 +1593,7 @@
           ],
           "http://plugins.linkedpipes.com/ontology/t-sparqlConstruct#query": [
             {
-              "@value": "PREFIX dcterms: <http://purl.org/dc/terms/>\nPREFIX skos:    <http://www.w3.org/2004/02/skos/core#>\nPREFIX sctfl:   <http://plugins.linkedpipes.com/ontology/t-sparqlConstructToFileList#>\nPREFIX void:    <http://rdfs.org/ns/void#>\n\nCONSTRUCT {\n  ?task a sctfl:Task ;\n    sctfl:fileFormat \"application/trig\" ;\n    sctfl:fileName ?fileName ;\n    sctfl:hasTaskQuery ?taskQuery . \n\n  ?taskQuery a sctfl:TaskQuery ;\n    sctfl:outputGraph ?dataset ;\n    sctfl:query ?query .\n}\nWHERE {\n  ?dataset a void:Linkset ;\n    void:subjectsTarget/dcterms:identifier ?subjectsIdentifier ;\n    void:objectsTarget/dcterms:identifier ?objectsIdentifier .\n\n  BIND (concat(?subjectsIdentifier, \"-\", ?objectsIdentifier) AS ?identifier)\n  BIND (concat(?identifier, \".trig\") AS ?fileName)\n\n  BIND (replace(\"\"\"\n  PREFIX skos:    <http://www.w3.org/2004/02/skos/core#>\n  PREFIX void:    <http://rdfs.org/ns/void#>\n\n  CONSTRUCT {\n    <%dataset%> a ?class .\n    ?a ?linkPredicate ?b .\n  } WHERE {\n    <%dataset%> a ?class ;\n      void:subjectsTarget ?subjectsTarget ;\n      void:objectsTarget ?objectsTarget ;\n      void:linkPredicate ?linkPredicate .\n\n    ?a skos:inScheme ?subjectsTarget ;\n      ?linkPredicate ?b .\n    ?b skos:inScheme ?objectsTarget .\n  }\n  \"\"\", \"%dataset%\", str(?dataset)) AS ?query)\n\n  BIND (\"http://localhost/\" AS ?ns)\n  BIND (iri(concat(?ns, \"task/\", ?identifier)) AS ?task)\n  BIND (iri(concat(?ns, \"task-query/\", ?identifier)) AS ?taskQuery)\n}"
+              "@value": "PREFIX skos:    <http://www.w3.org/2004/02/skos/core#>\nPREFIX sctfl:   <http://plugins.linkedpipes.com/ontology/t-sparqlConstructToFileList#>\nPREFIX void:    <http://rdfs.org/ns/void#>\n\nCONSTRUCT {\n  ?task a sctfl:Task ;\n    sctfl:fileFormat \"application/trig\" ;\n    sctfl:fileName ?fileName ;\n    sctfl:hasTaskQuery ?taskQuery . \n\n  ?taskQuery a sctfl:TaskQuery ;\n    sctfl:outputGraph ?dataset ;\n    sctfl:query ?query .\n}\nWHERE {\n  ?dataset a void:Linkset ;\n    void:subjectsTarget ?subjectsTarget ;\n    void:objectsTarget ?objectsTarget .\n\n  BIND (concat(replace(str(?subjectsTarget), \"^.*\\\\/(\\\\d+)$\", \"$1\"),\n               \"-\",\n               replace(str(?objectsTarget), \"^.*\\\\/(\\\\d+)$\", \"$1\")) AS ?identifier)\n  BIND (concat(?identifier, \".trig\") AS ?fileName)\n\n  BIND (replace(\"\"\"\n  PREFIX skos:    <http://www.w3.org/2004/02/skos/core#>\n  PREFIX void:    <http://rdfs.org/ns/void#>\n\n  CONSTRUCT {\n    <%dataset%> ?linksetProperty ?linksetObject .\n    ?s ?linkPredicate ?o .\n  } WHERE {\n    <%dataset%> ?linksetProperty ?linksetObject ; \n      void:subjectsTarget ?subjectsTarget ;\n      void:objectsTarget ?objectsTarget ;\n      void:linkPredicate ?linkPredicate .\n\n    ?s ?linkPredicate ?o .\n    FILTER (strstarts(str(?s), str(?subjectsTarget))\n            &&\n            strstarts(str(?o), str(?objectsTarget)))\n  }\n  \"\"\", \"%dataset%\", str(?dataset)) AS ?query)\n\n  BIND (\"http://localhost/\" AS ?ns)\n  BIND (iri(concat(?ns, \"task/\", ?identifier)) AS ?task)\n  BIND (iri(concat(?ns, \"task-query/\", ?identifier)) AS ?taskQuery)\n}"
             }
           ],
           "http://plugins.linkedpipes.com/ontology/t-sparqlConstruct#queryControl": [
@@ -1343,7 +1677,7 @@
           ],
           "http://plugins.linkedpipes.com/ontology/t-sparqlConstruct#query": [
             {
-              "@value": "PREFIX dcterms: <http://purl.org/dc/terms/>\nPREFIX skos:    <http://www.w3.org/2004/02/skos/core#>\nPREFIX sctfl:   <http://plugins.linkedpipes.com/ontology/t-sparqlConstructToFileList#>\n\nCONSTRUCT {\n  ?task a sctfl:Task ;\n    sctfl:fileFormat \"application/trig\" ;\n    sctfl:fileName ?fileName ;\n    sctfl:hasTaskQuery ?taskQuery . \n\n  ?taskQuery a sctfl:TaskQuery ;\n    sctfl:outputGraph ?dataset ;\n    sctfl:query ?query .\n}\nWHERE {\n  ?dataset a skos:ConceptScheme ;\n    dcterms:identifier ?identifier .\n  BIND (concat(?identifier, \".trig\") AS ?fileName)\n  BIND (replace(\"\"\"\n  PREFIX dbo:     <http://dbpedia.org/ontology/>\n  PREFIX dcterms: <http://purl.org/dc/terms/>\n  PREFIX rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n  PREFIX rdfs:    <http://www.w3.org/2000/01/rdf-schema#>\n  PREFIX skos:    <http://www.w3.org/2004/02/skos/core#>\n\n  CONSTRUCT {\n    <%concept-scheme%> ?conceptSchemeProperty ?conceptSchemeObject .\n\n    ?concept skos:inScheme <%concept-scheme%> ;\n      ?conceptProperty ?conceptObject ;\n      dcterms:valid ?validity .\n\n    ?validity ?validityProperty ?validityObject .\n  } WHERE {\n    VALUES ?conceptSchemeProperty {\n      dbo:abbreviation\n      dcterms:identifier\n      rdf:type\n      rdfs:label\n    }\n    <%concept-scheme%> ?conceptSchemeProperty ?conceptSchemeObject .\n\n    ?concept skos:inScheme <%concept-scheme%> ;\n      ?conceptProperty ?conceptObject ;\n      dcterms:valid ?validity .\n    ?validity ?validityProperty ?validityObject .\n  }\n  \"\"\", \"%concept-scheme%\", str(?dataset)) AS ?query)\n\n  BIND (\"http://localhost/\" AS ?ns)\n  BIND (iri(concat(?ns, \"task/\", ?identifier)) AS ?task)\n  BIND (iri(concat(?ns, \"task-query/\", ?identifier)) AS ?taskQuery)\n}"
+              "@value": "PREFIX dcterms: <http://purl.org/dc/terms/>\nPREFIX skos:    <http://www.w3.org/2004/02/skos/core#>\nPREFIX sctfl:   <http://plugins.linkedpipes.com/ontology/t-sparqlConstructToFileList#>\n\nCONSTRUCT {\n  ?task a sctfl:Task ;\n    sctfl:fileFormat \"application/trig\" ;\n    sctfl:fileName ?fileName ;\n    sctfl:hasTaskQuery ?taskQuery . \n\n  ?taskQuery a sctfl:TaskQuery ;\n    sctfl:outputGraph ?dataset ;\n    sctfl:query ?query .\n}\nWHERE {\n  ?dataset a skos:ConceptScheme ;\n    dcterms:identifier ?identifier .\n  BIND (concat(?identifier, \".trig\") AS ?fileName)\n  BIND (replace(\"\"\"\n  PREFIX dcterms: <http://purl.org/dc/terms/>\n  PREFIX rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n  PREFIX rdfs:    <http://www.w3.org/2000/01/rdf-schema#>\n  PREFIX skos:    <http://www.w3.org/2004/02/skos/core#>\n\n  CONSTRUCT {\n    <%concept-scheme%> ?conceptSchemeProperty ?conceptSchemeObject .\n\n    ?concept skos:inScheme <%concept-scheme%> ;\n      ?conceptProperty ?conceptObject ;\n      dcterms:valid ?validity .\n\n    ?validity ?validityProperty ?validityObject .\n  } WHERE {\n    <%concept-scheme%> ?conceptSchemeProperty ?conceptSchemeObject .\n\n    ?concept skos:inScheme <%concept-scheme%> ;\n      ?conceptProperty ?conceptObject ;\n      dcterms:valid ?validity .\n    ?validity ?validityProperty ?validityObject .\n  }\n  \"\"\", \"%concept-scheme%\", str(?dataset)) AS ?query)\n\n  BIND (\"http://localhost/\" AS ?ns)\n  BIND (iri(concat(?ns, \"task/\", ?identifier)) AS ?task)\n  BIND (iri(concat(?ns, \"task-query/\", ?identifier)) AS ?taskQuery)\n}"
             }
           ],
           "http://plugins.linkedpipes.com/ontology/t-sparqlConstruct#queryControl": [
@@ -1376,6 +1710,27 @@
         }
       ],
       "@id": "http://localhost:8080/resources/pipelines/created-1497634139243/components/68a81f7d-ab14-4dc8-8e63-79fef066cd2f/configuration"
+    },
+    {
+      "@graph": [
+        {
+          "@id": "http://localhost:8080/resources/pipelines/created-1497634139243/components/70f7005f-b59d-4d5b-b34d-88df120707d6/configuration",
+          "@type": [
+            "http://plugins.linkedpipes.com/ontology/e-filesFromLocal#Configuration"
+          ],
+          "http://plugins.linkedpipes.com/ontology/e-filesFromLocal#path": [
+            {
+              "@value": "/Users/mynarzjindrich/Dev/data/csu/codelists"
+            }
+          ],
+          "http://plugins.linkedpipes.com/ontology/e-filesFromLocal#pathControl": [
+            {
+              "@id": "http://plugins.linkedpipes.com/resource/configuration/None"
+            }
+          ]
+        }
+      ],
+      "@id": "http://localhost:8080/resources/pipelines/created-1497634139243/components/70f7005f-b59d-4d5b-b34d-88df120707d6/configuration"
     },
     {
       "@graph": [
@@ -1501,6 +1856,38 @@
     {
       "@graph": [
         {
+          "@id": "http://localhost:8080/resources/pipelines/created-1497634139243/components/8fe9b87f-ee12-4ff4-8e42-dcdea847a6ba/configuration",
+          "@type": [
+            "http://plugins.linkedpipes.com/ontology/t-filesToRdf#Configuration"
+          ],
+          "http://plugins.linkedpipes.com/ontology/t-filesToRdf#commitSize": [
+            {
+              "@type": "http://www.w3.org/2001/XMLSchema#integer",
+              "@value": "1"
+            }
+          ],
+          "http://plugins.linkedpipes.com/ontology/t-filesToRdf#commitSizeControl": [
+            {
+              "@id": "http://plugins.linkedpipes.com/resource/configuration/None"
+            }
+          ],
+          "http://plugins.linkedpipes.com/ontology/t-filesToRdf#mimeType": [
+            {
+              "@value": ""
+            }
+          ],
+          "http://plugins.linkedpipes.com/ontology/t-filesToRdf#mimeTypeControl": [
+            {
+              "@id": "http://plugins.linkedpipes.com/resource/configuration/None"
+            }
+          ]
+        }
+      ],
+      "@id": "http://localhost:8080/resources/pipelines/created-1497634139243/components/8fe9b87f-ee12-4ff4-8e42-dcdea847a6ba/configuration"
+    },
+    {
+      "@graph": [
+        {
           "@id": "http://localhost:8080/resources/pipelines/created-1497634139243/components/97ecd62f-bc72-4041-bcaf-9150e8a8599b/configuration",
           "@type": [
             "http://plugins.linkedpipes.com/ontology/t-sparqlConstructToFileList#Configuration"
@@ -1523,6 +1910,17 @@
     {
       "@graph": [
         {
+          "@id": "http://etl.linkedpipes.com/resources/components/t-chunkedToGraph/0.0.0/new/1",
+          "@type": [
+            "http://plugins.linkedpipes.com/ontology/t-chunkedToGraph#Configuration"
+          ]
+        }
+      ],
+      "@id": "http://localhost:8080/resources/pipelines/created-1497634139243/components/9903a35d-143c-40fa-8e47-5662f7cdb841/configuration"
+    },
+    {
+      "@graph": [
+        {
           "@id": "http://localhost:8080/resources/pipelines/created-1497634139243/components/9a16a41f-1d84-4550-8705-748497b54df9/configuration",
           "@type": [
             "http://plugins.linkedpipes.com/ontology/t-sparqlUpdate#Configuration"
@@ -1540,6 +1938,47 @@
         }
       ],
       "@id": "http://localhost:8080/resources/pipelines/created-1497634139243/components/9a16a41f-1d84-4550-8705-748497b54df9/configuration"
+    },
+    {
+      "@graph": [
+        {
+          "@id": "http://etl.linkedpipes.com/resources/components/t-rdfToFile/0.0.0/new/1",
+          "@type": [
+            "http://plugins.linkedpipes.com/ontology/t-rdfToFile#Configuration"
+          ],
+          "http://plugins.linkedpipes.com/ontology/t-rdfToFile#fileName": [
+            {
+              "@value": "data.ttl"
+            }
+          ],
+          "http://plugins.linkedpipes.com/ontology/t-rdfToFile#fileNameControl": [
+            {
+              "@id": "http://plugins.linkedpipes.com/resource/configuration/None"
+            }
+          ],
+          "http://plugins.linkedpipes.com/ontology/t-rdfToFile#fileType": [
+            {
+              "@value": "text/turtle"
+            }
+          ],
+          "http://plugins.linkedpipes.com/ontology/t-rdfToFile#fileTypeControl": [
+            {
+              "@id": "http://plugins.linkedpipes.com/resource/configuration/None"
+            }
+          ],
+          "http://plugins.linkedpipes.com/ontology/t-rdfToFile#graphUri": [
+            {
+              "@value": "http://localhost/default"
+            }
+          ],
+          "http://plugins.linkedpipes.com/ontology/t-rdfToFile#graphUriControl": [
+            {
+              "@id": "http://plugins.linkedpipes.com/resource/configuration/None"
+            }
+          ]
+        }
+      ],
+      "@id": "http://localhost:8080/resources/pipelines/created-1497634139243/components/b033a4fe-b614-4cbf-9136-6cc3a804745e/configuration"
     },
     {
       "@graph": [
@@ -1651,6 +2090,27 @@
         }
       ],
       "@id": "http://localhost:8080/resources/pipelines/created-1497634139243/components/c7615b82-891e-4580-85c9-58e7f45fbeb3/configuration"
+    },
+    {
+      "@graph": [
+        {
+          "@id": "http://localhost:8080/resources/pipelines/created-1497634139243/components/d8011469-3a2a-4e7c-a42c-b714f15e7c6d/configuration",
+          "@type": [
+            "http://plugins.linkedpipes.com/ontology/t-sparqlUpdate#Configuration"
+          ],
+          "http://plugins.linkedpipes.com/ontology/t-sparqlUpdate#query": [
+            {
+              "@value": "PREFIX dcterms: <http://purl.org/dc/terms/>\nPREFIX skos:    <http://www.w3.org/2004/02/skos/core#>\nPREFIX void:    <http://rdfs.org/ns/void#>\n\n####################\n### Merge levels ###\n####################\n\nDELETE {\n  ?concept skos:inScheme ?subLevel .\n}\nINSERT {\n  ?concept skos:inScheme ?topLevel .\n}\nWHERE {\n  {\n    SELECT ?topLevel ?subLevel\n    WHERE {\n      [] void:linkPredicate skos:narrowMatch ;\n        void:subjectsTarget ?topLevel .\n      FILTER NOT EXISTS {\n        [] void:objectsTarget ?topLevel ;\n          void:linkPredicate skos:narrowMatch .\n      }\n\n      ?topLevel (^void:subjectsTarget/void:objectsTarget)+ ?subLevel .\n      [] void:objectsTarget ?subLevel ;\n        void:linkPredicate skos:narrowMatch .\n    }\n  }\n  ?concept skos:inScheme ?subLevel .\n}\n;\n\n########################################\n### Remove skos:narrowMatch linksets ###\n########################################\n\nDELETE {\n  ?linkset ?p ?o .\n}\nWHERE {\n  ?linkset void:linkPredicate skos:narrowMatch ;\n    ?p ?o .\n}\n;\n\n#######################################\n### Remove sublevel concept schemes ###\n#######################################\n\nDELETE {\n  ?conceptScheme ?p ?o .\n}\nWHERE {\n  [] void:linkPredicate skos:narrowMatch ;\n    void:objectsTarget ?conceptScheme .\n  ?conceptScheme ?p ?o .\n}\n;\n\n############################\n### Map skos:narrowMatch ###\n############################\n\nDELETE {\n  ?s skos:narrowMatch ?o .\n}\nINSERT {\n  ?s skos:narrower ?o .\n}\nWHERE {\n  ?s skos:narrowMatch ?o .\n}\n;\n\n############################\n### Rewrite concept IRIs ###\n############################\n\nDELETE {\n  ?_concept ?outP ?outO .\n  ?inS ?inP ?_concept .\n}\nINSERT {\n  ?concept ?outP ?outO .\n  ?inS ?inP ?concept .\n}\nWHERE {\n  {\n    SELECT DISTINCT ?_concept ?concept\n    WHERE {\n      ?_concept skos:inScheme/dcterms:identifier ?identifier .\n      FILTER (!strstarts(str(?_concept), concat(\"https://csu.opendata.cz/zdroj/řízený-slovník/\", ?identifier)))\n      ?_concept skos:notation ?notation .\n      BIND (iri(concat(\"https://csu.opendata.cz/zdroj/řízený-slovník/\",\n                      ?identifier,\n                      \"/pojem/\",\n                      encode_for_uri(?notation)\n                      )) AS ?concept)\n    }\n  }\n  ?_concept ?outP ?outO .\n  OPTIONAL {\n    ?inS ?inP ?_concept .\n  }\n}\n;\n\n#######################\n### Mirror narrower ###\n#######################\n\nINSERT {\n  ?b skos:broader ?a .\n}\nWHERE {\n  ?a skos:narrower ?b .\n}\n;\n\n########################\n### Add top concepts ###\n########################\n\nINSERT {\n  ?conceptScheme skos:hasTopConcept ?topConcept .\n  ?topConcept skos:topConceptOf ?conceptScheme .\n}\nWHERE {\n  ?topConcept skos:inScheme ?conceptScheme .\n  FILTER NOT EXISTS {\n    ?topConcept skos:broader [] .\n  }\n}"
+            }
+          ],
+          "http://plugins.linkedpipes.com/ontology/t-sparqlUpdate#queryControl": [
+            {
+              "@id": "http://plugins.linkedpipes.com/resource/configuration/None"
+            }
+          ]
+        }
+      ],
+      "@id": "http://localhost:8080/resources/pipelines/created-1497634139243/components/d8011469-3a2a-4e7c-a42c-b714f15e7c6d/configuration"
     },
     {
       "@graph": [
