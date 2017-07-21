@@ -1,0 +1,23 @@
+PREFIX rdfs:  <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rúian: <https://ruian.linked.opendata.cz/slovník/>
+PREFIX skos:  <http://www.w3.org/2004/02/skos/core#>
+PREFIX wd:    <http://www.wikidata.org/entity/>
+PREFIX wdt:   <http://www.wikidata.org/prop/direct/>
+
+CONSTRUCT {
+  ?source skos:exactMatch ?target .
+}
+WHERE {
+  ?source skos:inScheme <https://csu.opendata.cz/zdroj/řízený-slovník/63> ;
+    skos:prefLabel ?prefLabel ;
+    ^skos:relatedMatch [
+      skos:exactMatch ?okres ;
+      ^skos:exactMatch/rúian:pád2 ?case2
+    ] .
+
+  ?target wdt:P131 ?okres ;
+    rdfs:label ?label .
+
+  # Deoptimized match due to RDF4J that doesn't respect BINDs.
+  FILTER (concat(str(?prefLabel), " u ", str(?case2)) = str(?label))
+}

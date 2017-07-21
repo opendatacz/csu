@@ -1,0 +1,23 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX wdt:  <http://www.wikidata.org/prop/direct/>
+PREFIX wd:   <http://www.wikidata.org/entity/>
+
+CONSTRUCT {
+  ?katastralniUzemi a wd:Q20871353 ;
+    wdt:P131 ?okres ;
+    rdfs:label ?label, ?altLabel .
+}
+WHERE {
+  ?katastralniUzemi wdt:P31 wd:Q20871353 ;
+    wdt:P131 ?okres ;
+    rdfs:label ?_label .
+  FILTER langMatches(lang(?_label), "cs")
+  BIND (strlang(replace(str(?_label), "okres\\s+", ""), "cs") AS ?label)
+
+  OPTIONAL {
+    ?katastralniUzemi skos:altLabel ?_altLabel .
+    FILTER langMatches(lang(?_altLabel), "cs")
+  }
+  BIND (strlang(replace(str(?_altLabel), "okres\\s+", ""), "cs") AS ?altLabel)
+}
