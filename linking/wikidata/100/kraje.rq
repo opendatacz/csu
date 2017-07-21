@@ -1,0 +1,20 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX wdt:  <http://www.wikidata.org/prop/direct/>
+PREFIX wd:   <http://www.wikidata.org/entity/>
+
+CONSTRUCT {
+  ?kraj a wd:Q38911 ;
+    rdfs:label ?label, ?altLabel .
+}
+WHERE {
+  ?kraj wdt:P31 wd:Q38911 .
+  OPTIONAL {
+    ?kraj rdfs:label ?label .
+    FILTER langMatches(lang(?label), "cs")
+  }
+  OPTIONAL {
+    ?kraj skos:altLabel ?altLabel .
+    FILTER langMatches(lang(?altLabel), "cs")
+  }
+}
