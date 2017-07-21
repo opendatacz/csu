@@ -1,4 +1,3 @@
-PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX skos:    <http://www.w3.org/2004/02/skos/core#>
 PREFIX sctfl:   <http://plugins.linkedpipes.com/ontology/t-sparqlConstructToFileList#>
 PREFIX void:    <http://rdfs.org/ns/void#>
@@ -15,10 +14,12 @@ CONSTRUCT {
 }
 WHERE {
   ?dataset a void:Linkset ;
-    void:subjectsTarget/dcterms:identifier ?subjectsIdentifier ;
-    void:objectsTarget/dcterms:identifier ?objectsIdentifier .
+    void:subjectsTarget ?subjectsTarget ;
+    void:objectsTarget ?objectsTarget .
 
-  BIND (concat(?subjectsIdentifier, "-", ?objectsIdentifier) AS ?identifier)
+  BIND (concat(replace(str(?subjectsTarget), "^.*\\/(\\d+)$", "$1"),
+               "-",
+               replace(str(?objectsTarget), "^.*\\/(\\d+)$", "$1")) AS ?identifier)
   BIND (concat(?identifier, ".trig") AS ?fileName)
 
   BIND (replace("""
@@ -26,17 +27,18 @@ WHERE {
   PREFIX void:    <http://rdfs.org/ns/void#>
 
   CONSTRUCT {
-    <%dataset%> a ?class .
-    ?a ?linkPredicate ?b .
+    <%dataset%> ?linksetProperty ?linksetObject .
+    ?s ?linkPredicate ?o .
   } WHERE {
-    <%dataset%> a ?class ;
+    <%dataset%> ?linksetProperty ?linksetObject ; 
       void:subjectsTarget ?subjectsTarget ;
       void:objectsTarget ?objectsTarget ;
       void:linkPredicate ?linkPredicate .
 
-    ?a skos:inScheme ?subjectsTarget ;
-      ?linkPredicate ?b .
-    ?b skos:inScheme ?objectsTarget .
+    ?s ?linkPredicate ?o .
+    FILTER (strstarts(str(?s), str(?subjectsTarget))
+            &&
+            strstarts(str(?o), str(?objectsTarget)))
   }
   """, "%dataset%", str(?dataset)) AS ?query)
 
