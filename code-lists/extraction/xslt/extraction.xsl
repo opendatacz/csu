@@ -118,6 +118,7 @@
         
         <rdf:RDF>
             <xsl:apply-templates select="EXPORT[$type-code = '1']" mode="code-list">
+                <xsl:with-param name="class" select="concat('https://csu.opendata.cz/slovník/', $code)" tunnel="yes"/>
                 <xsl:with-param name="dataset" select="concat($ns, 'řízený-slovník/', $code)" tunnel="yes"/>
                 <xsl:with-param name="resource-ns"
                   select="concat($ns, 'řízený-slovník/', $code, '/')"
@@ -133,6 +134,7 @@
     <!-- Code list templates -->
     
     <xsl:template match="EXPORT" mode="code-list">
+        <xsl:param name="class" tunnel="yes"/>
         <xsl:param name="dataset" tunnel="yes"/>
         <xsl:param name="lang" tunnel="yes"/>
         
@@ -141,6 +143,10 @@
             <dcterms:language rdf:resource="http://id.loc.gov/vocabulary/iso639-1/{$lang}"/>
             <xsl:apply-templates select="INFO/OBSAH/CISELNIK" mode="code-list"/>
         </skos:ConceptScheme>
+        <rdfs:Class rdf:about="{$class}">
+            <rdfs:subClassOf rdf:resource="&skos;Concept"/>
+            <rdfs:seeAlso rdf:resource="{$dataset}"/>
+        </rdfs:Class>
         <xsl:apply-templates select="DATA" mode="code-list"/>
     </xsl:template>
     
@@ -161,10 +167,12 @@
     </xsl:template>
     
     <xsl:template match="DATA/POLOZKA" mode="code-list">
+        <xsl:param name="class" tunnel="yes"/>
         <xsl:param name="dataset" tunnel="yes"/>
         <xsl:param name="resource-ns" tunnel="yes"/>
         <xsl:variable name="concept" select="concat($resource-ns, 'pojem/', CHODNOTA/text())"/>
         <skos:Concept rdf:about="{$concept}">
+            <rdf:type rdf:resource="{$class}"/>
             <skos:inScheme rdf:resource="{$dataset}"/>
             <xsl:apply-templates mode="code-list"/>
             <dcterms:valid>
