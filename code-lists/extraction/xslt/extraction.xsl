@@ -21,7 +21,8 @@
     
     <!-- Global parameters -->
     
-    <xsl:param name="ns">https://csu.opendata.cz/zdroj/</xsl:param>
+    <xsl:param name="domain">https://csu.opendata.cz/</xsl:param>
+    <xsl:param name="ns" select="concat($domain, 'zdroj')"/>
     
     <!-- Functions -->
     
@@ -118,7 +119,7 @@
         
         <rdf:RDF>
             <xsl:apply-templates select="EXPORT[$type-code = '1']" mode="code-list">
-                <xsl:with-param name="class" select="concat('https://csu.opendata.cz/slovník/', $code)" tunnel="yes"/>
+                <xsl:with-param name="class" select="concat($domain, 'slovník/', $code)" tunnel="yes"/>
                 <xsl:with-param name="dataset" select="concat($ns, 'řízený-slovník/', $code)" tunnel="yes"/>
                 <xsl:with-param name="resource-ns"
                   select="concat($ns, 'řízený-slovník/', $code, '/')"
