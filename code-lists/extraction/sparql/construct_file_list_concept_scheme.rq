@@ -6,41 +6,61 @@ CONSTRUCT {
   ?task a sctfl:Task ;
     sctfl:fileFormat "application/trig" ;
     sctfl:fileName ?fileName ;
-    sctfl:hasTaskQuery ?taskQuery . 
+    sctfl:hasTaskQuery ?taskQuery, ?taskConceptSchemeQuery, ?taskValidityQuery . 
 
   ?taskQuery a sctfl:TaskQuery ;
     sctfl:outputGraph ?dataset ;
     sctfl:query ?query .
+
+  ?taskConceptSchemeQuery a sctfl:TaskQuery ;
+    sctfl:outputGraph ?dataset ;
+    sctfl:query ?conceptSchemeQuery .
+
+  ?taskValidityQuery a sctfl:TaskQuery ;
+    sctfl:outputGraph ?dataset ;
+    sctfl:query ?validityQuery .
 }
 WHERE {
   ?dataset a skos:ConceptScheme ;
     dcterms:identifier ?identifier .
   BIND (concat(?identifier, ".trig") AS ?fileName)
   BIND (replace("""
+  PREFIX skos:    <http://www.w3.org/2004/02/skos/core#>
+
+  CONSTRUCT WHERE {
+    ?concept skos:inScheme <%concept-scheme%> ;
+      ?conceptProperty ?conceptObject .
+  }
+  """, "%concept-scheme%", str(?dataset)) AS ?query)
+
+  BIND (replace("""
+  PREFIX skos:    <http://www.w3.org/2004/02/skos/core#>
+
+  CONSTRUCT WHERE {
+    <%concept-scheme%> ?conceptSchemeProperty ?conceptSchemeObject .
+  }
+  """, "%concept-scheme%", str(?dataset)) AS ?conceptSchemeQuery)
+
+  BIND (replace("""
   PREFIX dcterms: <http://purl.org/dc/terms/>
-  PREFIX rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-  PREFIX rdfs:    <http://www.w3.org/2000/01/rdf-schema#>
   PREFIX skos:    <http://www.w3.org/2004/02/skos/core#>
 
   CONSTRUCT {
-    <%concept-scheme%> ?conceptSchemeProperty ?conceptSchemeObject .
-
-    ?concept skos:inScheme <%concept-scheme%> ;
-      ?conceptProperty ?conceptObject ;
-      dcterms:valid ?validity .
-
     ?validity ?validityProperty ?validityObject .
   } WHERE {
-    <%concept-scheme%> ?conceptSchemeProperty ?conceptSchemeObject .
-
-    ?concept skos:inScheme <%concept-scheme%> ;
-      ?conceptProperty ?conceptObject ;
-      dcterms:valid ?validity .
+    {
+      SELECT DISTINCT ?validity
+      WHERE {
+        <%concept-scheme%> ^skos:inScheme/dcterms:valid ?validity .
+      }
+    }
     ?validity ?validityProperty ?validityObject .
   }
-  """, "%concept-scheme%", str(?dataset)) AS ?query)
+  """, "%concept-scheme%", str(?dataset)) AS ?validityQuery)
 
   BIND ("http://localhost/" AS ?ns)
   BIND (iri(concat(?ns, "task/", ?identifier)) AS ?task)
   BIND (iri(concat(?ns, "task-query/", ?identifier)) AS ?taskQuery)
+  BIND (iri(concat(?ns, "task-query/", ?identifier, "/concept-scheme")) AS ?taskConceptSchemeQuery)
+  BIND (iri(concat(?ns, "task-query/", ?identifier, "/validity")) AS ?taskValidityQuery)
 }
