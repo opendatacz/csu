@@ -11,16 +11,16 @@ WHERE {
   {
     SELECT ?topLevel ?subLevel
     WHERE {
-      [] void:linkPredicate skos:narrowMatch ;
+      [] void:linkPredicate skos:narrower ;
         void:subjectsTarget ?topLevel .
       FILTER NOT EXISTS {
         [] void:objectsTarget ?topLevel ;
-          void:linkPredicate skos:narrowMatch .
+          void:linkPredicate skos:narrower .
       }
 
       ?topLevel (^void:subjectsTarget/void:objectsTarget)+ ?subLevel .
       [] void:objectsTarget ?subLevel ;
-        void:linkPredicate skos:narrowMatch .
+        void:linkPredicate skos:narrower .
     }
   }
   ?concept skos:inScheme ?subLevel .

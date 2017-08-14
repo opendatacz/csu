@@ -8,7 +8,7 @@ DELETE {
   ?concept a ?class .
 }
 WHERE {
-  [] void:linkPredicate skos:narrowMatch ;
+  [] void:linkPredicate skos:narrower ;
     void:objectsTarget ?conceptScheme .
   ?conceptScheme ?p ?o .
   ?class rdfs:seeAlso ?conceptScheme ;

@@ -5,6 +5,6 @@ DELETE {
   ?linkset ?p ?o .
 }
 WHERE {
-  ?linkset void:linkPredicate skos:narrowMatch ;
+  ?linkset void:linkPredicate skos:narrower ;
     ?p ?o .
 }

@@ -16,16 +16,16 @@ WHERE {
   {
     SELECT ?topLevel ?subLevel
     WHERE {
-      [] void:linkPredicate skos:narrowMatch ;
+      [] void:linkPredicate skos:narrower ;
         void:subjectsTarget ?topLevel .
       FILTER NOT EXISTS {
         [] void:objectsTarget ?topLevel ;
-          void:linkPredicate skos:narrowMatch .
+          void:linkPredicate skos:narrower .
       }
 
       ?topLevel (^void:subjectsTarget/void:objectsTarget)+ ?subLevel .
       [] void:objectsTarget ?subLevel ;
-        void:linkPredicate skos:narrowMatch .
+        void:linkPredicate skos:narrower .
     }
   }
   ?concept skos:inScheme ?subLevel .
@@ -40,7 +40,7 @@ DELETE {
   ?linkset ?p ?o .
 }
 WHERE {
-  ?linkset void:linkPredicate skos:narrowMatch ;
+  ?linkset void:linkPredicate skos:narrower ;
     ?p ?o .
 }
 ;
@@ -55,27 +55,12 @@ DELETE {
   ?concept a ?class .
 }
 WHERE {
-  [] void:linkPredicate skos:narrowMatch ;
+  [] void:linkPredicate skos:narrower ;
     void:objectsTarget ?conceptScheme .
   ?conceptScheme ?p ?o .
   ?class rdfs:seeAlso ?conceptScheme ;
     ?classP ?classO .
   ?concept a ?class .
-}
-;
-
-############################
-### Map skos:narrowMatch ###
-############################
-
-DELETE {
-  ?s skos:narrowMatch ?o .
-}
-INSERT {
-  ?s skos:narrower ?o .
-}
-WHERE {
-  ?s skos:narrowMatch ?o .
 }
 ;
 

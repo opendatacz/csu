@@ -249,7 +249,7 @@
         
         <xsl:variable name="link-predicate">
             <xsl:choose>
-                <xsl:when test="f:is-parent-level($source-abbreviation, $target-abbreviation)">skos:narrowMatch</xsl:when>
+                <xsl:when test="f:is-parent-level($source-abbreviation, $target-abbreviation)">skos:narrower</xsl:when>
                 <xsl:otherwise>skos:relatedMatch</xsl:otherwise>
             </xsl:choose>
         </xsl:variable>
