@@ -6,7 +6,7 @@ CONSTRUCT {
   ?task a sctfl:Task ;
     sctfl:fileFormat "application/trig" ;
     sctfl:fileName ?fileName ;
-    sctfl:hasTaskQuery ?taskQuery, ?taskConceptSchemeQuery, ?taskValidityQuery . 
+    sctfl:hasTaskQuery ?taskQuery, ?taskConceptSchemeQuery, ?taskValidityQuery, ?taskAttributeQuery . 
 
   ?taskQuery a sctfl:TaskQuery ;
     sctfl:outputGraph ?dataset ;
@@ -19,6 +19,10 @@ CONSTRUCT {
   ?taskValidityQuery a sctfl:TaskQuery ;
     sctfl:outputGraph ?dataset ;
     sctfl:query ?validityQuery .
+
+  ?taskAttributeQuery a sctfl:TaskQuery ;
+    sctfl:outputGraph ?dataset ;
+    sctfl:query ?attributeQuery . 
 }
 WHERE {
   ?dataset a skos:ConceptScheme ;
@@ -58,9 +62,33 @@ WHERE {
   }
   """, "%concept-scheme%", str(?dataset)) AS ?validityQuery)
 
+  BIND (replace("""
+  PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+  PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+  CONSTRUCT {
+    ?statement a rdf:Statement ;
+      rdf:subject ?concept ;
+      rdf:predicate ?predicate ;
+      rdf:object ?object .
+  } WHERE {
+    {
+      SELECT DISTINCT ?concept
+      WHERE {
+         ?concept skos:inScheme <%concept-scheme%> .
+      }
+    }
+    ?statement a rdf:Statement ;
+      rdf:subject ?concept ;
+      rdf:predicate ?predicate ;
+      rdf:object ?object .
+  }
+  """, "%concept-scheme%", str(?dataset)) AS ?attributeQuery)
+
   BIND ("http://localhost/" AS ?ns)
   BIND (iri(concat(?ns, "task/", ?identifier)) AS ?task)
   BIND (iri(concat(?ns, "task-query/", ?identifier)) AS ?taskQuery)
   BIND (iri(concat(?ns, "task-query/", ?identifier, "/concept-scheme")) AS ?taskConceptSchemeQuery)
   BIND (iri(concat(?ns, "task-query/", ?identifier, "/validity")) AS ?taskValidityQuery)
+  BIND (iri(concat(?ns, "task-query/", ?identifier, "/attributes")) AS ?taskAttributeQuery)
 }
