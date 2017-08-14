@@ -22,7 +22,7 @@
     <!-- Global parameters -->
     
     <xsl:param name="domain">https://csu.opendata.cz/</xsl:param>
-    <xsl:param name="ns" select="concat($domain, 'zdroj')"/>
+    <xsl:param name="ns" select="concat($domain, 'zdroj/')"/>
     
     <!-- Functions -->
     
@@ -250,7 +250,7 @@
         <xsl:variable name="link-predicate">
             <xsl:choose>
                 <xsl:when test="f:is-parent-level($source-abbreviation, $target-abbreviation)">skos:narrower</xsl:when>
-                <xsl:otherwise>skos:relatedMatch</xsl:otherwise>
+                <xsl:otherwise>skos:mappingRelation</xsl:otherwise>
             </xsl:choose>
         </xsl:variable>
         
