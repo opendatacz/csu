@@ -48,7 +48,7 @@ WHERE {
 
     <https://www.czso.cz> a foaf:Agent ;
       dcterms:type <http://purl.org/adms/publishertype/NationalAuthority> ;
-      foaf:name "Czech Statistical Office"@cs , "Český statistický úřad"@cs .
+      foaf:name "Czech Statistical Office"@en , "Český statistický úřad"@cs .
 
     <%dataset%/distribuce> a dcat:Distribution ;
       dcterms:modified ?now ;
