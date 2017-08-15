@@ -42,7 +42,7 @@ WHERE {
       ?datasetProperty ?datasetObject ;
       dcterms:title ?label ;
       dcterms:publisher <https://www.czso.cz> ;
-      dcat:distribution <%dataset%/distribution> .
+      dcat:distribution <%dataset%/distribuce> .
 
     ?s ?p ?o .
 
@@ -50,7 +50,7 @@ WHERE {
       dcterms:type <http://purl.org/adms/publishertype/NationalAuthority> ;
       foaf:name "Czech Statistical Office"@cs , "Český statistický úřad"@cs .
 
-    <%dataset%/distribution> a dcat:Distribution ;
+    <%dataset%/distribuce> a dcat:Distribution ;
       dcterms:modified ?now ;
       dcterms:format <http://publications.europa.eu/resource/authority/file-type/RDF_TRIG> ;
       dcat:accessURL ?downloadUrl ;
