@@ -29,7 +29,7 @@ WHERE {
     dcterms:identifier ?identifier .
   BIND (concat(?identifier, ".trig") AS ?fileName)
   BIND (replace("""
-  PREFIX skos:    <http://www.w3.org/2004/02/skos/core#>
+  PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 
   CONSTRUCT WHERE {
     ?concept skos:inScheme <%concept-scheme%> ;
@@ -38,10 +38,13 @@ WHERE {
   """, "%concept-scheme%", str(?dataset)) AS ?query)
 
   BIND (replace("""
-  PREFIX skos:    <http://www.w3.org/2004/02/skos/core#>
+  PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+  PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 
   CONSTRUCT WHERE {
     <%concept-scheme%> ?conceptSchemeProperty ?conceptSchemeObject .
+    ?class rdfs:seeAlso <%concept-scheme%> ;
+      ?classProperty ?classObject .
   }
   """, "%concept-scheme%", str(?dataset)) AS ?conceptSchemeQuery)
 
