@@ -13,6 +13,6 @@ die () {
 # Test if xmllint is installed.
 command -v xmllint >/dev/null 2>&1 || die "Missing xmllint. Please install it."
 
-for codelist in ${1%/}/*.xml; do
+for codelist in ${1%/}/*; do
   xmllint --noout $codelist 2>/dev/null || basename $codelist
 done
